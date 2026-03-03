@@ -263,18 +263,19 @@ export default function ContactModal() {
 
               {status === 'error' && (
                 <p style={{ fontSize: '0.8125rem', color: '#f87171', textAlign: 'center', marginTop: '-0.5rem' }}>
-                  Something went wrong. Email us at{' '}
-                  <a
-                    href={`mailto:${isAdv ? 'advertising' : 'partners'}@videoev.com`}
-                    style={{ color: '#f87171', textDecoration: 'underline' }}
-                  >
-                    {isAdv ? 'advertising' : 'partners'}@videoev.com
+                  Something went wrong. Email us directly at{' '}
+                  <a href="mailto:sales@videoev.com" style={{ color: '#f87171', textDecoration: 'underline' }}>
+                    sales@videoev.com
                   </a>
                 </p>
               )}
 
               <p style={{ fontSize: '0.75rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '-0.5rem' }}>
-                {isAdv ? 'We respond within one business day.' : 'Currently expanding with US charging networks.'}
+                {isAdv ? 'We respond within one business day.' : 'Currently expanding with US charging networks.'}{' '}
+                Prefer email?{' '}
+                <a href="mailto:sales@videoev.com" style={{ color: 'var(--accent)', textDecoration: 'none' }}>
+                  sales@videoev.com
+                </a>
               </p>
             </form>
           </div>

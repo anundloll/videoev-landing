@@ -100,6 +100,14 @@ export default function Hero() {
           >
             See live demo →
           </a>
+          {' '}·{' '}
+          <a
+            href="mailto:sales@videoev.com"
+            style={{ color: 'var(--text-3)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+            className="hover:text-white transition-colors"
+          >
+            sales@videoev.com
+          </a>
         </p>
 
         {/* Hero illustration — dual terminal panels */}
