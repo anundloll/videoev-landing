@@ -50,10 +50,10 @@ export default function Footer() {
             <div className="eyebrow mb-4" style={{ color: 'var(--text-3)' }}>Platform</div>
             <ul className="flex flex-col gap-3">
               {[
-                { label: 'Inventory Search', href: '#advertisers' },
-                { label: 'For Brands', href: '#advertisers' },
-                { label: 'For CPOs', href: '#cpos' },
-                { label: 'Tech Stack', href: '#tech' },
+                { label: 'Inventory Search', href: '/#advertisers' },
+                { label: 'For Brands', href: '/#advertisers' },
+                { label: 'For CPOs', href: '/#cpos' },
+                { label: 'Tech Stack', href: '/#tech' },
                 { label: 'About', href: '/about' },
                 { label: 'Live Demo', href: 'https://demo.videoev.com' },
               ].map((l) => (
@@ -77,8 +77,8 @@ export default function Footer() {
             <div className="eyebrow mb-4" style={{ color: 'var(--text-3)' }}>Contact</div>
             <ul className="flex flex-col gap-3">
               {[
-                { label: 'Advertising', href: 'mailto:sales@videoev.com' },
-                { label: 'Network Partnerships', href: 'mailto:sales@videoev.com' },
+                { label: 'Advertising', href: '/advertise' },
+                { label: 'Network Partnerships', href: '/network' },
                 { label: 'Investor Relations', href: '/investors' },
                 { label: 'Press', href: 'mailto:sales@videoev.com' },
               ].map((l) => (

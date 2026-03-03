@@ -3,29 +3,10 @@ export default function About() {
     <article>
       {/* Hero */}
       <section
-        className="relative overflow-hidden"
-        style={{
-          paddingTop: '6rem',
-          paddingBottom: '6rem',
-          background:
-            'radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,66,37,0.2) 0%, transparent 65%)',
-        }}
+        className="relative"
+        style={{ paddingTop: '6rem', paddingBottom: '5rem' }}
       >
-        {/* Grid */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)
-            `,
-            backgroundSize: '80px 80px',
-            maskImage:
-              'radial-gradient(ellipse 70% 60% at 50% 40%, black 30%, transparent 100%)',
-          }}
-        />
-
-        <div className="relative max-w-3xl mx-auto px-6 text-center">
+        <div className="max-w-3xl mx-auto px-6 text-center">
           <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>
             The Founder
           </p>
@@ -62,7 +43,7 @@ export default function About() {
       <section className="py-20" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="max-w-3xl mx-auto px-6">
 
-          {/* Origin story */}
+          {/* Origin */}
           <div className="mb-16">
             <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Origin</p>
             <h2
@@ -74,7 +55,7 @@ export default function About() {
                 marginBottom: '1.5rem',
               }}
             >
-              Five years building closed-loop attribution at Comcast.
+              Six years building closed-loop attribution at Comcast.
             </h2>
 
             <div
@@ -86,25 +67,25 @@ export default function About() {
               }}
             >
               <p style={{ marginBottom: '1.25rem' }}>
-                From 2020 to 2026, Arvin Nundloll served as Director of Strategy
-                &amp; Business Development at Comcast Advertising — the ad arm
-                of the largest cable operator in the United States. His mandate
-                was simple to state and hard to execute: prove that television
-                advertising moves money.
+                Six years at Comcast Advertising as Director of Strategy &amp;
+                Business Development. The job was selling ideas to a sales org,
+                which means the ideas needed hard numbers behind them. TV
+                advertising at that scale is a multi-billion dollar machine.
+                The standing question nobody had fully answered: does any of it
+                actually move purchase behaviour?
               </p>
               <p style={{ marginBottom: '1.25rem' }}>
-                The project that defined his tenure was a closed-loop attribution
-                study with Mastercard. By matching Effectv&apos;s household-level
-                TV impression data against Mastercard&apos;s transaction network,
-                the team demonstrated, for the first time at scale, that a TV ad
-                seen in a specific household directly correlated with a purchase
-                at a specific retailer within a defined attribution window.
+                The Mastercard study answered it. Effectv&apos;s household-level
+                TV impression data, matched against Mastercard transaction
+                records — a specific household saw a specific spot, that
+                cardholder spent at the advertised retailer within the
+                attribution window. No panel. No model. Card swipes.
               </p>
               <p>
-                This wasn&apos;t a modeled estimate or a survey. It was
-                transactional proof. The kind of closed loop that digital
-                promised for twenty years but TV had never delivered — until
-                that study.
+                That wasn&apos;t how TV attribution had worked before. The
+                closed loop that digital promised for twenty years and TV
+                never delivered — until that study. The honest reaction was:
+                why did this require a bank to make it work?
               </p>
             </div>
           </div>
@@ -127,17 +108,17 @@ export default function About() {
                 marginBottom: '1rem',
               }}
             >
-              &ldquo;We proved TV worked — but only because Mastercard let us
-              close the loop. I kept thinking: what if the medium itself came
-              pre-wired with the same data layer? You wouldn&apos;t need a bank
-              to loan you the proof.&rdquo;
+              &ldquo;We proved TV worked — but only because Mastercard handed
+              us the transaction data. The whole time I kept thinking: what if
+              the medium came with that data layer already in it? You
+              wouldn&apos;t need a bank to loan you the proof.&rdquo;
             </p>
             <footer style={{ fontSize: '0.8125rem', color: 'var(--text-3)', letterSpacing: '0.04em' }}>
               ARVIN NUNDLOLL · FOUNDER, VIDEOEV
             </footer>
           </blockquote>
 
-          {/* The connection */}
+          {/* The Insight */}
           <div className="mb-16">
             <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>The Insight</p>
             <h2
@@ -161,28 +142,29 @@ export default function About() {
               }}
             >
               <p style={{ marginBottom: '1.25rem' }}>
-                OCPP 2.0.1 — the open protocol that modern EV chargers speak —
-                transmits the vehicle&apos;s VIN, the battery state-of-charge,
-                and the session duration directly to the network operator. That
-                data is precise, real-time, and tied to a physical transaction: a
-                person, in a vehicle, at a location, for a defined block of time.
+                OCPP 2.0.1 is the protocol modern EV chargers speak. Every
+                session, the charger transmits the vehicle VIN,
+                battery state-of-charge, and session duration directly to the
+                network operator. Precise, real-time data tied to a physical
+                transaction — a specific person, in a specific vehicle, at a
+                specific location, for a defined block of time.
               </p>
               <p style={{ marginBottom: '1.25rem' }}>
-                Amazon Marketing Cloud closes the other half of the loop. When an
-                ad impression served during that charging session is later matched
-                against an Amazon purchase, you get the same closed-loop proof
-                that required a Mastercard partnership at Comcast — but built
-                into the medium itself from day one.
+                Amazon Marketing Cloud closes the other side. An ad impression
+                during that charging session, later matched to an Amazon
+                purchase — same closed-loop proof that took a Mastercard
+                partnership to achieve at Comcast. No third-party data deal
+                needed. The charger sends the signal.
               </p>
               <p>
-                VideoEV is, at its core, an attribution product that happens to
-                also be an ad network. The medium was designed around
-                measurability, not retrofitted for it.
+                VideoEV isn&apos;t an ad network with measurement bolted on.
+                The attribution layer came first. The ad network was built
+                to make use of it.
               </p>
             </div>
           </div>
 
-          {/* Credentials grid */}
+          {/* Credentials */}
           <div className="mb-16">
             <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Background</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -220,16 +202,11 @@ export default function About() {
                   key={item.org}
                   className="rounded-xl p-5"
                   style={{
-                    background: item.accent
-                      ? 'rgba(0,66,37,0.08)'
-                      : 'rgba(255,255,255,0.02)',
+                    background: item.accent ? 'rgba(0,66,37,0.08)' : 'rgba(255,255,255,0.02)',
                     border: `1px solid ${item.accent ? 'rgba(212,175,55,0.18)' : 'var(--border)'}`,
                   }}
                 >
-                  <div
-                    className="font-semibold"
-                    style={{ fontSize: '0.9375rem', marginBottom: '2px' }}
-                  >
+                  <div className="font-semibold" style={{ fontSize: '0.9375rem', marginBottom: '2px' }}>
                     {item.role}
                   </div>
                   <div
@@ -242,13 +219,7 @@ export default function About() {
                   >
                     {item.org} · {item.years}
                   </div>
-                  <p
-                    style={{
-                      fontSize: '0.8125rem',
-                      color: 'var(--text-3)',
-                      lineHeight: 1.55,
-                    }}
-                  >
+                  <p style={{ fontSize: '0.8125rem', color: 'var(--text-3)', lineHeight: 1.55 }}>
                     {item.note}
                   </p>
                 </div>
@@ -256,7 +227,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Why now */}
+          {/* Why Now */}
           <div className="mb-16">
             <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Why Now</p>
             <h2
@@ -280,17 +251,18 @@ export default function About() {
               }}
             >
               <p style={{ marginBottom: '1.25rem' }}>
-                The US EV charging network is in the middle of its infrastructure
-                build. Operators are deploying hardware, standardising on OCPP
-                2.0.1, and looking for revenue models that don&apos;t require
-                them to become media companies. That window — before the market
-                consolidates around two or three dominant platforms — is the
-                window VideoEV is built to occupy.
+                The US charging network is still being built. Most operators
+                right now are running infrastructure at a loss, watching for
+                any recurring revenue that doesn&apos;t require them to hire a
+                media sales team. OCPP 2.0.1 is the standard being deployed at
+                scale — the first version of the protocol that exposes enough
+                vehicle data to make audience targeting actually work.
               </p>
               <p>
-                The attribution layer, the programmatic stack, and the direct
-                relationships with CPOs all exist. The product is live. The
-                inventory is real. What comes next is scale.
+                That window, before two or three platforms consolidate the
+                inventory, is short. The attribution layer, the programmatic
+                stack, and the CPO relationships all exist. The product is
+                live. The inventory is real. What comes next is scale.
               </p>
             </div>
           </div>
@@ -304,14 +276,11 @@ export default function About() {
             }}
           >
             <div>
-              <div
-                className="font-bold"
-                style={{ fontSize: '1.125rem', marginBottom: '4px' }}
-              >
-                Get in touch directly
+              <div className="font-bold" style={{ fontSize: '1.125rem', marginBottom: '4px' }}>
+                Talk to Arvin directly
               </div>
               <p style={{ fontSize: '0.875rem', color: 'var(--text-3)', lineHeight: 1.5 }}>
-                For advertising, partnerships, press, or investor inquiries.
+                Advertising, partnerships, press, investor inquiries.
               </p>
             </div>
             <a
@@ -321,13 +290,7 @@ export default function About() {
             >
               sales@videoev.com
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path
-                  d="M2.5 7h9M7.5 3l4 4-4 4"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+                <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
           </div>

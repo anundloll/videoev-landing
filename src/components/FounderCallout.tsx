@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 const CREDENTIALS = [
   { label: 'Comcast Advertising', sub: 'Director, Strategy & BD · 2020–2026' },
-  { label: 'Mastercard Attribution', sub: 'Closed-loop TV-to-transaction study' },
-  { label: 'Amazon Marketing Cloud', sub: 'AMC layer embedded in VideoEV from day one' },
+  { label: 'Mastercard Attribution', sub: 'TV impression data matched to card transaction records' },
+  { label: 'Amazon Marketing Cloud', sub: 'VideoEV attribution runs natively through Amazon AMC' },
 ];
 
 export default function FounderCallout() {
@@ -48,11 +48,10 @@ export default function FounderCallout() {
                 maxWidth: '52ch',
               }}
             >
-              Arvin Nundloll spent six years at Comcast Advertising proving that
-              media impressions drive purchases — including a first-of-its-kind
-              closed-loop study with Mastercard. VideoEV applies the same
-              attribution discipline to EV charging, with Amazon Marketing Cloud
-              built into the network from the start.
+              Six years at Comcast Advertising. The last project that stuck: TV
+              impression data matched against Mastercard transaction records —
+              actual card swipes, not a model. VideoEV runs the same attribution
+              logic through OCPP charger data and Amazon Marketing Cloud.
             </p>
             <Link
               href="/about"
