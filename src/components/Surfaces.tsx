@@ -33,61 +33,61 @@ const SURFACES = [
 
 export default function Surfaces() {
   return (
-    <section id="surfaces" className="py-28" style={{ background: 'var(--bg)' }}>
+    <section id="surfaces" className="py-24" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-2xl mb-16">
-          <div className="section-label">
-            <span className="eyebrow">Ad Formats</span>
-          </div>
+        <div className="max-w-2xl mb-14">
+          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Ad Formats</p>
           <h2
-            className="font-bold tracking-tight"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.15, marginBottom: '1rem' }}
+            className="font-bold"
+            style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              lineHeight: 1.12,
+              letterSpacing: '-0.015em',
+              marginBottom: '1.125rem',
+            }}
           >
             Three screens, one charging session
           </h2>
-          <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65 }}>
+          <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
             Creative runs simultaneously across all surfaces. One buy, three touchpoints,
             zero fragmentation. Or cherry-pick the format that fits your objective.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {SURFACES.map((s) => (
             <div
               key={s.id}
               className="card card-hover p-7 flex flex-col"
               style={{ borderColor: 'var(--border)' }}
             >
-              {/* Surface icon */}
-              <div className="text-3xl mb-5">{s.icon}</div>
+              {/* Accent top bar */}
+              <div
+                className="w-8 h-0.5 rounded-full mb-6"
+                style={{ background: s.accent }}
+              />
 
               {/* Label + split */}
-              <div className="flex items-center justify-between mb-1">
-                <span className="font-semibold" style={{ fontSize: '1rem' }}>{s.label}</span>
+              <div className="flex items-start justify-between gap-2 mb-2">
+                <span className="font-semibold" style={{ fontSize: '1rem', lineHeight: 1.2 }}>{s.label}</span>
                 <span
-                  className="text-xs font-semibold px-2.5 py-0.5 rounded-full"
-                  style={{ background: s.accent + '18', color: s.accent }}
+                  className="text-xs font-semibold px-2 py-0.5 rounded flex-shrink-0"
+                  style={{ background: s.accent + '14', color: s.accent, marginTop: '2px' }}
                 >
-                  {s.split} of inventory
+                  {s.split}
                 </span>
               </div>
 
               <div
                 className="text-xs mb-4"
-                style={{ color: 'var(--text-3)', fontFamily: 'monospace', letterSpacing: '0.04em' }}
+                style={{ color: 'var(--text-3)', fontFamily: 'monospace', letterSpacing: '0.03em' }}
               >
                 {s.specs}
               </div>
 
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.65, flex: 1 }}>
+              <p style={{ fontSize: '0.875rem', color: 'var(--text-2)', lineHeight: 1.65, flex: 1, fontWeight: 300 }}>
                 {s.desc}
               </p>
-
-              {/* Accent bar */}
-              <div
-                className="mt-6 h-0.5 rounded-full"
-                style={{ background: s.accent, opacity: 0.4 }}
-              />
             </div>
           ))}
         </div>

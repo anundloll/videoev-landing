@@ -1,11 +1,11 @@
 export default function DualCTA() {
   return (
-    <section className="py-28" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
+    <section className="py-24" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-xl mx-auto mb-16">
+        <div className="text-center max-w-xl mx-auto mb-14">
           <h2
-            className="font-bold tracking-tight"
-            style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.15 }}
+            className="font-bold"
+            style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
           >
             Two ways to work with VideoEV
           </h2>

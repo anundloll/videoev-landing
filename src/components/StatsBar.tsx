@@ -1,30 +1,52 @@
 const STATS = [
-  { value: '248k', label: 'Monthly unique vehicles', suffix: '' },
-  { value: '30', label: 'Avg session length', suffix: 'min' },
-  { value: '$65k+', label: 'Avg vehicle MSRP', suffix: '' },
-  { value: '$18–$34', label: 'CPM range', suffix: '' },
-  { value: '3', label: 'Ad surfaces', suffix: 'screens' },
+  { value: '248k', label: 'Monthly unique vehicles' },
+  { value: '30 min', label: 'Avg session length' },
+  { value: '$65k+', label: 'Avg vehicle MSRP' },
+  { value: '$18–$34', label: 'CPM' },
+  { value: '3', label: 'Ad surfaces' },
 ];
 
 export default function StatsBar() {
   return (
-    <section style={{ borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+    <section
+      style={{
+        background: 'var(--surface)',
+        borderTop: '1px solid var(--border)',
+        borderBottom: '1px solid var(--border)',
+      }}
+    >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 divide-y md:divide-y-0 md:divide-x" style={{ '--tw-divide-opacity': 1, divideColor: 'var(--border)' } as React.CSSProperties}>
+        <div
+          className="grid grid-cols-2 md:grid-cols-5"
+          style={{ borderLeft: '1px solid var(--border)' }}
+        >
           {STATS.map((s) => (
-            <div key={s.label} className="py-7 px-4 text-center">
+            <div
+              key={s.label}
+              className="py-8 px-6 text-center"
+              style={{ borderRight: '1px solid var(--border)' }}
+            >
               <div
                 className="stat-num font-bold"
-                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', color: 'var(--text-1)', lineHeight: 1.1 }}
+                style={{
+                  fontSize: 'clamp(1.625rem, 2.75vw, 2.25rem)',
+                  color: 'var(--text-1)',
+                  lineHeight: 1,
+                  letterSpacing: '-0.02em',
+                  marginBottom: '0.5rem',
+                }}
               >
                 {s.value}
-                {s.suffix && (
-                  <span style={{ fontSize: '0.9em', color: 'var(--text-2)', fontWeight: 500, marginLeft: '0.2em' }}>
-                    {s.suffix}
-                  </span>
-                )}
               </div>
-              <div style={{ fontSize: '0.78rem', color: 'var(--text-3)', marginTop: '0.375rem', lineHeight: 1.3 }}>
+              <div
+                style={{
+                  fontSize: '0.75rem',
+                  color: 'var(--text-3)',
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                  fontWeight: 500,
+                }}
+              >
                 {s.label}
               </div>
             </div>

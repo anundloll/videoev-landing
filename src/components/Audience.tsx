@@ -19,42 +19,41 @@ export default function Audience() {
   return (
     <section
       id="audience"
-      className="py-28"
+      className="py-24"
       style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left — copy */}
           <div>
-            <div className="section-label">
-              <span className="eyebrow">The Audience</span>
-            </div>
+            <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>The Audience</p>
             <h2
-              className="font-bold tracking-tight"
-              style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.15, marginBottom: '1.25rem' }}
+              className="font-bold"
+              style={{
+                fontSize: 'clamp(2rem, 4vw, 3rem)',
+                lineHeight: 1.12,
+                letterSpacing: '-0.015em',
+                marginBottom: '1.25rem',
+              }}
             >
               High-income, brand-ready, and going nowhere
             </h2>
-            <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, marginBottom: '2rem' }}>
+            <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, marginBottom: '2rem', fontWeight: 300 }}>
               The average EV driver has a household income of $150k+ and just
               purchased a $65k vehicle. They are, by definition, already high-
               intent luxury buyers — at the exact moment they need entertainment.
             </p>
 
-            {/* Audience signals */}
-            <div className="flex flex-col gap-3">
+            {/* Audience signals — minimal, no emoji icons */}
+            <div className="flex flex-col gap-0" style={{ borderTop: '1px solid var(--border)' }}>
               {SIGNALS.map((s) => (
-                <div key={s.label} className="flex items-start gap-3">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 text-sm"
-                    style={{ background: 'var(--surface-2)', border: '1px solid var(--border)' }}
-                  >
-                    {s.icon}
-                  </div>
-                  <div>
-                    <div className="font-medium text-sm">{s.label}</div>
-                    <div style={{ fontSize: '0.8125rem', color: 'var(--text-3)' }}>{s.desc}</div>
-                  </div>
+                <div
+                  key={s.label}
+                  className="flex items-center justify-between py-3.5"
+                  style={{ borderBottom: '1px solid var(--border)' }}
+                >
+                  <div className="font-medium" style={{ fontSize: '0.875rem' }}>{s.label}</div>
+                  <div style={{ fontSize: '0.8rem', color: 'var(--text-3)', textAlign: 'right', maxWidth: '18ch' }}>{s.desc}</div>
                 </div>
               ))}
             </div>
