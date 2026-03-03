@@ -1,12 +1,13 @@
 # VideoEV Landing — CLAUDE.md
 
 ## Stack
-Next.js 16 App Router · Tailwind v4 · TypeScript · Static export (`output: 'export'`)
+Next.js 16 App Router · Tailwind v4 · TypeScript · Vercel native (no static export)
 
 ## Dev
 - Preview: `preview_start("videoev-landing")` → port 3002
-- Build: `npm run build --prefix ~/Desktop/videoev-landing` → static files in `out/`
-- Deploy: FTP upload `out/` contents only (~1.2 MB). Never the project root.
+- Build: `npm run build` (output goes to `.next/`, not `out/`)
+- Deploy: `git push` → Vercel auto-deploys from `main` (~1 min)
+- **`output: 'export'` and `images: { unoptimized: true }` have been removed** — Vercel handles Next.js natively
 
 ## Architecture
 - `src/app/page.tsx` — server component (keeps `export const metadata`); imports all section components
