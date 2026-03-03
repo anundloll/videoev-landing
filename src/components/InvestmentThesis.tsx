@@ -27,14 +27,15 @@ export default function InvestmentThesis() {
               of the consumer journey.
             </h2>
             <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
-              As the world shifts to EVs, the parking lot becomes the new storefront.
-              By owning the media layer of the charging stall, we are building the most
-              data-rich retail media network in history.
+              The US charging network is being built now. Most operators are running
+              infrastructure at a loss and looking for revenue that doesn't require
+              them to hire a sales team. VideoEV adds a media layer — a revenue share
+              that costs them nothing and offsets the infrastructure loss.
             </p>
             <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '2rem' }}>
-              VideoEV is seeking <span style={{ color: 'var(--text-1)', fontWeight: 500 }}>$2M to scale our first 500 "High-IQ" screen nodes</span> —
-              deploying at premium EV charging locations where affluent, brand-ready
-              audiences are guaranteed to be stationary and screen-engaged.
+              VideoEV is raising <span style={{ color: 'var(--text-1)', fontWeight: 500 }}>$2M to deploy our first 500 screen nodes</span> — at EV
+              charging locations where session length runs 20–40 minutes and occupancy
+              is predictable.
             </p>
 
             {/* Why now callout */}

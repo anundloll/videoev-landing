@@ -8,7 +8,7 @@ const STEPS = [
   {
     step: '02',
     title: 'Serve across three screens',
-    body: 'Creative runs simultaneously on the kiosk (16:9, seen at 2m), the driver\'s mobile app (in-app native), and in-car display tablets — all context-aware.',
+    body: 'Creative runs simultaneously on the kiosk (16:9, seen at 2m), the driver\'s mobile app (in-app native), and in-car display tablets. Each format is served within the active charging session.',
     detail: 'Kiosk · Mobile · In-car',
   },
   {

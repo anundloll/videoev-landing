@@ -32,7 +32,7 @@ const PROTOCOLS = [
   {
     standard: 'VAST 4.2',
     badge: 'Video Delivery',
-    desc: 'Industry-standard video ad serving across all three surfaces. Supports interactive overlays, VPAID-compatible measurement, third-party verification tags, and proof-of-play reporting.',
+    desc: 'Video ad serving across all three surfaces. Supports interactive overlays, VPAID-compatible measurement, third-party verification tags, and proof-of-play reporting.',
     detail: 'VPAID compatible · 3rd-party verification · Proof-of-play',
     badgeColor: 'rgba(59,130,246,0.1)',
     badgeText: '#3B82F6',

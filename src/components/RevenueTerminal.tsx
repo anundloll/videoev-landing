@@ -18,7 +18,7 @@ function fmt(n: number): string {
 const STEPS = [
   { n: '01', title: 'Connect via OCPP 2.0.1', body: 'Your chargers speak OCPP already. We connect in under 48 hours — no hardware swap, no CapEx.' },
   { n: '02', title: 'We handle the media layer', body: 'VideoEV places ads from our programmatic marketplace. You never touch a campaign.' },
-  { n: '03', title: 'Monthly passive yield', body: 'Revenue deposited monthly. Real-time analytics in your dashboard. Zero effort, ongoing income.' },
+  { n: '03', title: 'Monthly passive yield', body: 'Revenue deposited monthly. Real-time analytics in your dashboard. You own the charger — we run the media.' },
 ];
 
 export default function RevenueTerminal() {

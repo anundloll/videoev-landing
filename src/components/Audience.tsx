@@ -36,12 +36,12 @@ export default function Audience() {
                 marginBottom: '1.25rem',
               }}
             >
-              High-income, brand-ready, and going nowhere
+              They spent $65k to get here. They're not going anywhere for 30 minutes.
             </h2>
             <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, marginBottom: '2rem', fontWeight: 300 }}>
-              The average EV driver has a household income of $150k+ and just
-              purchased a $65k vehicle. They are, by definition, already high-
-              intent luxury buyers — at the exact moment they need entertainment.
+              The average EV driver has a household income above $150k and just
+              made a $65k purchase decision. The vehicle is the qualification
+              signal. The charging session is the window.
             </p>
 
             {/* Audience signals — minimal, no emoji icons */}

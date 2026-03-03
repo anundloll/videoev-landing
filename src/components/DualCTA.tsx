@@ -22,7 +22,7 @@ const CARDS = [
     id: 'cpo',
     audience: 'Charge Point Operators',
     headline: 'Turn infrastructure into income',
-    body: 'Add VideoEV screens to your stations and convert a utility cost into a recurring profit center. Automated revenue share from day one — zero upfront investment.',
+    body: 'Add VideoEV screens to your stations. We handle the ad operations — revenue share deposits monthly, no upfront investment required.',
     features: [
       'White-label kiosk & app UI',
       'Revenue share model — zero upfront',
@@ -38,7 +38,7 @@ const CARDS = [
     id: 'retailer',
     audience: 'Retailers & Venues',
     headline: 'Drive affluent shoppers in-store',
-    body: 'EV drivers have 30% higher discretionary spend than the average consumer. Place ads at nearby chargers to pull high-intent buyers from the curb straight to your counter.',
+    body: 'EV drivers spend 30% more on discretionary categories than the average consumer. Place ads at nearby chargers and measure foot traffic back to your location.',
     features: [
       'Geo-targeted by store proximity',
       'Audience: $150k+ household income',
@@ -62,7 +62,7 @@ export default function DualCTA() {
             className="font-bold"
             style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
           >
-            Three ways to grow with VideoEV
+            How to work with VideoEV
           </h2>
         </div>
 

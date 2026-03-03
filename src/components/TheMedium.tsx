@@ -6,8 +6,8 @@ const POINTS = [
   },
   {
     n: '02',
-    title: 'Premium demographics by default',
-    body: 'EV ownership correlates tightly with high income. The vehicle itself is the qualifying signal — no cookie required.',
+    title: 'Income-skewed by the vehicle itself',
+    body: 'EV ownership correlates tightly with high income. The vehicle is the qualifying signal — no cookie required.',
   },
   {
     n: '03',
@@ -65,12 +65,12 @@ export default function TheMedium() {
               marginBottom: '1.125rem',
             }}
           >
-            EV charging is the new premium video channel
+            EV charging is a 30-minute media window with no competition
           </h2>
           <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
-            While their vehicle charges, drivers have nothing to do and nowhere
-            to go. VideoEV turns that captive 30 minutes into a premium media
-            moment — more engaged than TV, more intentional than social.
+            While the vehicle charges, the driver has nothing to do and nowhere
+            to go. VideoEV is the ad inventory that runs during those 30 minutes —
+            one screen, one session, one advertiser at a time.
           </p>
         </div>
 

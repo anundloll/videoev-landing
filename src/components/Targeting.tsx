@@ -115,8 +115,8 @@ export default function Targeting() {
             </h2>
             <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, marginBottom: '2rem', fontWeight: 300 }}>
               VideoEV&apos;s Audience Builder combines live vehicle telemetry with MSRP-derived
-              income signals and station context to build audiences that traditional
-              programmatic can&apos;t replicate.
+              income signals and station context. The data comes from the charger — not a
+              modeled proxy.
             </p>
 
             <div className="flex flex-col gap-5">
