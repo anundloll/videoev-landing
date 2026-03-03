@@ -88,9 +88,9 @@ export default function Audience() {
                     <div
                       className="text-xs px-2 py-0.5 rounded flex-shrink-0"
                       style={{
-                        background: 'rgba(234,179,8,0.08)',
+                        background: 'rgba(212,175,55,0.08)',
                         color: 'var(--accent)',
-                        border: '1px solid rgba(234,179,8,0.15)',
+                        border: '1px solid rgba(212,175,55,0.15)',
                       }}
                     >
                       {v.tier}
@@ -108,7 +108,7 @@ export default function Audience() {
               {/* Footer */}
               <div
                 className="px-5 py-3 flex items-center justify-between"
-                style={{ borderTop: '1px solid var(--border)', background: 'rgba(234,179,8,0.03)' }}
+                style={{ borderTop: '1px solid var(--border)', background: 'rgba(212,175,55,0.03)' }}
               >
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-3)' }}>
                   + 44 more vehicle makes tracked

@@ -7,6 +7,8 @@ const SCRIPT_URL =
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
+const COMPANY_TYPES = ['Brand', 'Agency', 'Retailer', 'Other'];
+
 const ADVERTISER_BUDGETS = [
   '$5k – $15k / month',
   '$15k – $50k / month',
@@ -15,10 +17,10 @@ const ADVERTISER_BUDGETS = [
 ];
 
 const PARTNER_SIZES = [
-  '1 – 10 stations',
-  '11 – 50 stations',
-  '51 – 200 stations',
-  '200+ stations',
+  '1 – 10 stalls',
+  '11 – 50 stalls',
+  '51 – 200 stalls',
+  '200+ stalls',
 ];
 
 function CheckIcon() {
@@ -39,7 +41,7 @@ function ArrowIcon() {
 }
 
 const inputStyle: React.CSSProperties = {
-  background: 'var(--surface-2)',
+  background: 'rgba(255,255,255,0.05)',
   border: '1px solid var(--border)',
   color: 'var(--text-1)',
   outline: 'none',
@@ -62,6 +64,7 @@ export default function ContactModal() {
   const [status, setStatus] = useState<Status>('idle');
   const [name, setName] = useState('');
   const [company, setCompany] = useState('');
+  const [companyType, setCompanyType] = useState('');
   const [email, setEmail] = useState('');
   const [extra, setExtra] = useState('');
 
@@ -69,6 +72,7 @@ export default function ContactModal() {
     setStatus('idle');
     setName('');
     setCompany('');
+    setCompanyType('');
     setEmail('');
     setExtra('');
   }, []);
@@ -88,7 +92,6 @@ export default function ContactModal() {
     return () => window.removeEventListener('videoev:openModal', handler);
   }, [resetForm]);
 
-  // Close on Escape
   useEffect(() => {
     if (!type) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') close(); };
@@ -104,7 +107,7 @@ export default function ContactModal() {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type, name, company, email, extra }),
+        body: JSON.stringify({ type, name, company, companyType, email, extra }),
       });
       setStatus('success');
     } catch {
@@ -119,15 +122,15 @@ export default function ContactModal() {
   return (
     <div
       className="fixed inset-0 z-[200] flex items-center justify-center p-4"
-      style={{ background: 'rgba(0,0,0,0.75)', backdropFilter: 'blur(10px)' }}
+      style={{ background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(12px)' }}
       onClick={close}
     >
       <div
         className="relative w-full max-w-lg rounded-2xl"
         style={{
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
-          boxShadow: '0 32px 80px rgba(0,0,0,0.6)',
+          background: '#0d0d0d',
+          border: '1px solid rgba(212,175,55,0.2)',
+          boxShadow: '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)',
         }}
         onClick={e => e.stopPropagation()}
       >
@@ -135,18 +138,17 @@ export default function ContactModal() {
         <button
           onClick={close}
           aria-label="Close"
-          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-colors"
-          style={{ color: 'var(--text-3)', background: 'var(--surface-2)', fontSize: '0.875rem' }}
+          className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg transition-colors hover:bg-white/10"
+          style={{ color: 'var(--text-3)', background: 'rgba(255,255,255,0.05)', fontSize: '0.875rem' }}
         >
           ✕
         </button>
 
         {status === 'success' ? (
-          /* ── Success state ── */
           <div className="text-center px-8 py-12">
             <div
               className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
-              style={{ background: 'rgba(234,179,8,0.08)', border: '1px solid rgba(234,179,8,0.25)' }}
+              style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}
             >
               <CheckIcon />
             </div>
@@ -163,30 +165,31 @@ export default function ContactModal() {
             </button>
           </div>
         ) : (
-          /* ── Form ── */
           <div className="p-8">
             <div className="eyebrow mb-2">
-              {isAdv ? 'For Advertisers & Agencies' : 'For Charging Networks'}
+              {isAdv ? 'Get Started' : 'For Charging Networks'}
             </div>
             <h3 className="font-bold mb-7" style={{ fontSize: '1.5rem', lineHeight: 1.2 }}>
-              {isAdv ? 'Request your media kit' : 'Become a network partner'}
+              {isAdv ? 'Launch your campaign' : 'Connect your network'}
             </h3>
 
             <form onSubmit={submit} className="flex flex-col gap-5">
-              {/* Row: name + company */}
+              {/* Name */}
+              <div>
+                <label style={labelStyle}>Your name</label>
+                <input
+                  required
+                  value={name}
+                  onChange={e => setName(e.target.value)}
+                  placeholder="Jane Smith"
+                  style={inputStyle}
+                />
+              </div>
+
+              {/* Company + Type */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label style={labelStyle}>Your name</label>
-                  <input
-                    required
-                    value={name}
-                    onChange={e => setName(e.target.value)}
-                    placeholder="Jane Smith"
-                    style={inputStyle}
-                  />
-                </div>
-                <div>
-                  <label style={labelStyle}>{isAdv ? 'Company / Agency' : 'Network name'}</label>
+                  <label style={labelStyle}>{isAdv ? 'Company' : 'Network name'}</label>
                   <input
                     required
                     value={company}
@@ -195,6 +198,21 @@ export default function ContactModal() {
                     style={inputStyle}
                   />
                 </div>
+                {isAdv && (
+                  <div>
+                    <label style={labelStyle}>Company type</label>
+                    <select
+                      value={companyType}
+                      onChange={e => setCompanyType(e.target.value)}
+                      style={{ ...inputStyle, color: companyType ? 'var(--text-1)' : 'var(--text-3)' }}
+                    >
+                      <option value="">Select type</option>
+                      {COMPANY_TYPES.map(opt => (
+                        <option key={opt} value={opt}>{opt}</option>
+                      ))}
+                    </select>
+                  </div>
+                )}
               </div>
 
               {/* Email */}
@@ -213,7 +231,7 @@ export default function ContactModal() {
               {/* Budget / station count */}
               <div>
                 <label style={labelStyle}>
-                  {isAdv ? 'Estimated monthly budget' : 'Number of stations'}
+                  {isAdv ? 'Estimated monthly budget' : 'Number of stalls'}
                 </label>
                 <select
                   value={extra}

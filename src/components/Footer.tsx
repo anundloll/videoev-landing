@@ -8,21 +8,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2.5 mb-4">
               <div
                 className="w-7 h-7 rounded-md flex items-center justify-center"
-                style={{ background: 'var(--accent)' }}
+                style={{ background: 'var(--accent-green)', border: '1px solid rgba(212,175,55,0.3)' }}
               >
                 <svg width="13" height="16" viewBox="0 0 13 16" fill="none">
-                  <path d="M7.5 1L1 9h5.5L5 15l7-8.5H6L7.5 1Z" fill="#000" strokeLinejoin="round"/>
+                  <path d="M7.5 1L1 9h5.5L5 15l7-8.5H6L7.5 1Z" fill="#D4AF37" strokeLinejoin="round"/>
                 </svg>
               </div>
               <span className="font-semibold text-white text-base tracking-tight">VideoEV</span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-3)', lineHeight: 1.65, maxWidth: '32ch' }}>
-              Premium video advertising network for EV charging stations.
-              Reach high-income drivers during the one moment they&apos;re
-              guaranteed to be watching.
+              The operating system for vehicle media. Self-serve VMN built on
+              OCPP 2.0.1 and Amazon Marketing Cloud.
             </p>
             <div className="flex gap-4 mt-5">
               <a
@@ -46,16 +45,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Product */}
+          {/* Platform */}
           <div>
-            <div className="eyebrow mb-4" style={{ color: 'var(--text-3)' }}>Product</div>
+            <div className="eyebrow mb-4" style={{ color: 'var(--text-3)' }}>Platform</div>
             <ul className="flex flex-col gap-3">
               {[
-                { label: 'How It Works', href: '#how-it-works' },
-                { label: 'Ad Formats', href: '#surfaces' },
-                { label: 'Audience', href: '#audience' },
+                { label: 'Inventory Search', href: '#advertisers' },
+                { label: 'For Brands', href: '#advertisers' },
+                { label: 'For CPOs', href: '#cpos' },
+                { label: 'Tech Stack', href: '#tech' },
                 { label: 'Live Demo', href: 'https://demo.videoev.com' },
-                { label: 'Advertiser Dashboard', href: 'https://data.videoev.com' },
               ].map((l) => (
                 <li key={l.label}>
                   <a
@@ -79,11 +78,14 @@ export default function Footer() {
               {[
                 { label: 'Advertising', href: 'mailto:advertising@videoev.com' },
                 { label: 'Network Partnerships', href: 'mailto:partners@videoev.com' },
+                { label: 'Investor Relations', href: '/investors' },
                 { label: 'Press', href: 'mailto:press@videoev.com' },
               ].map((l) => (
                 <li key={l.label}>
                   <a
                     href={l.href}
+                    target={l.href.startsWith('mailto') ? undefined : l.href.startsWith('http') ? '_blank' : undefined}
+                    rel={l.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     style={{ fontSize: '0.875rem', color: 'var(--text-3)' }}
                     className="hover:text-white transition-colors"
                   >

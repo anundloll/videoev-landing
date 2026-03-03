@@ -5,7 +5,7 @@ const SURFACES = [
     split: '52%',
     specs: '16:9 · 1920×1080 · 15–30 sec',
     desc: 'Full-screen video on the station display, visible at 2 metres. Highest brand impact — the only content on screen while the vehicle charges.',
-    accent: '#EAB308',
+    accent: '#D4AF37',
     icon: '🖥️',
     position: 'left',
   },

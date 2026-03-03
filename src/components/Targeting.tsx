@@ -44,8 +44,8 @@ export default function Targeting() {
                     key={group.label}
                     className="rounded-xl p-4"
                     style={{
-                      background: group.active ? 'rgba(234,179,8,0.04)' : 'var(--surface-2)',
-                      border: `1px solid ${group.active ? 'rgba(234,179,8,0.2)' : 'var(--border)'}`,
+                      background: group.active ? 'rgba(212,175,55,0.04)' : 'var(--surface-2)',
+                      border: `1px solid ${group.active ? 'rgba(212,175,55,0.2)' : 'var(--border)'}`,
                     }}
                   >
                     <div className="flex items-center justify-between mb-3">
@@ -53,7 +53,7 @@ export default function Targeting() {
                       {group.badge && (
                         <span
                           className="text-xs px-2 py-0.5 rounded"
-                          style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}
+                          style={{ background: 'rgba(34,197,94,0.1)', color: '#004225', border: '1px solid rgba(34,197,94,0.2)' }}
                         >
                           {group.badge}
                         </span>
@@ -65,9 +65,9 @@ export default function Targeting() {
                           key={chip}
                           className="text-xs px-3 py-1 rounded-full font-medium"
                           style={{
-                            background: group.active ? 'rgba(234,179,8,0.12)' : 'rgba(255,255,255,0.06)',
+                            background: group.active ? 'rgba(212,175,55,0.12)' : 'rgba(255,255,255,0.06)',
                             color: group.active ? 'var(--accent)' : 'var(--text-2)',
-                            border: `1px solid ${group.active ? 'rgba(234,179,8,0.25)' : 'var(--border)'}`,
+                            border: `1px solid ${group.active ? 'rgba(212,175,55,0.25)' : 'var(--border)'}`,
                           }}
                         >
                           {chip}
@@ -80,7 +80,7 @@ export default function Targeting() {
                 {/* Reach estimate */}
                 <div
                   className="rounded-xl p-5 flex items-center justify-between"
-                  style={{ background: 'rgba(234,179,8,0.06)', border: '1px solid rgba(234,179,8,0.2)' }}
+                  style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.2)' }}
                 >
                   <div>
                     <div className="eyebrow" style={{ marginBottom: '0.25rem' }}>Est. Reach</div>

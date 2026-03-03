@@ -23,27 +23,27 @@ const POINTS = [
 
 const COMPARE = [
   {
-    medium: 'Billboard',
-    dwell: '5 seconds',
-    audience: 'General public',
-    data: 'Static',
-    attribution: 'Estimated',
+    medium: 'Traditional OOH',
+    dwell: '< 10 Sec',
+    data: 'Estimated',
+    measurement: 'None',
+    yield: 'Static',
     featured: false,
   },
   {
     medium: 'Gas Station TV',
-    dwell: '4 minutes',
-    audience: 'General public',
-    data: 'Fuel volume',
-    attribution: 'Limited',
+    dwell: '4 Mins',
+    data: 'Basic',
+    measurement: 'Foot traffic',
+    yield: 'Low Margin',
     featured: false,
   },
   {
     medium: 'VideoEV (VMN)',
-    dwell: '15–40 minutes',
-    audience: 'Affluent / Tech Early Adopters',
-    data: 'Bi-directional Vehicle Data',
-    attribution: 'Closed-Loop (AMC)',
+    dwell: '20–40 Mins',
+    data: 'Direct Vehicle (OCPP)',
+    measurement: 'Amazon Purchase Data',
+    yield: 'Programmatic High-CPM',
     featured: true,
   },
 ];
@@ -119,7 +119,7 @@ export default function TheMedium() {
                 key={c.medium}
                 className="px-6 py-4 text-center font-semibold"
                 style={{
-                  background: c.featured ? 'rgba(34,197,94,0.06)' : 'transparent',
+                  background: c.featured ? 'rgba(212,175,55,0.06)' : 'transparent',
                   borderLeft: '1px solid var(--border)',
                   color: c.featured ? 'var(--accent)' : 'var(--text-2)',
                   fontSize: c.featured ? '0.9375rem' : '0.875rem',
@@ -134,9 +134,9 @@ export default function TheMedium() {
           {/* Rows */}
           {[
             { label: 'Dwell Time', key: 'dwell' as const },
-            { label: 'Audience', key: 'audience' as const },
-            { label: 'Intelligence', key: 'data' as const },
-            { label: 'Attribution', key: 'attribution' as const },
+            { label: 'Data Source', key: 'data' as const },
+            { label: 'Measurement', key: 'measurement' as const },
+            { label: 'Yield Model', key: 'yield' as const },
           ].map((row, i) => (
             <div
               key={row.label}
@@ -154,7 +154,7 @@ export default function TheMedium() {
                   key={c.medium}
                   className="px-6 py-4 text-center"
                   style={{
-                    background: c.featured ? 'rgba(34,197,94,0.03)' : 'transparent',
+                    background: c.featured ? 'rgba(212,175,55,0.03)' : 'transparent',
                     borderLeft: '1px solid var(--border)',
                     fontSize: '0.875rem',
                     fontWeight: c.featured ? 600 : 400,

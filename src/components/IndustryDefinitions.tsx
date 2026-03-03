@@ -4,7 +4,7 @@ const TERMS = [
     name: 'Vehicle Media Network',
     def: 'A bi-directional media layer that sits on top of energy infrastructure. VideoEV is the first VMN — we don\'t just put a screen next to a charger, we integrate with the charger\'s data protocol to serve context-aware ads.',
     tag: 'Category',
-    tagColor: '#22C55E',
+    tagColor: '#004225',
   },
   {
     abbr: 'CPO',

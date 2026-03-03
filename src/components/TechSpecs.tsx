@@ -26,7 +26,7 @@ const PROTOCOLS = [
     desc: 'Full Pod Bidding support — multiple advertisers compete for individual 30-second slots within a single 20-minute charging session. Each pod can hold up to 10 ad units, enabling layered campaigns across a single impression window.',
     detail: 'Multiple buyers per session · Slot-level floor pricing',
     badgeColor: 'rgba(34,197,94,0.1)',
-    badgeText: '#22C55E',
+    badgeText: '#004225',
     badgeBorder: 'rgba(34,197,94,0.2)',
   },
   {
@@ -192,7 +192,7 @@ export default function TechSpecs() {
                 </p>
               </div>
               <div className="flex items-center gap-1.5 flex-shrink-0">
-                <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#22c55e' }} />
+                <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#004225' }} />
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-2)', fontWeight: 500, whiteSpace: 'nowrap' }}>
                   Spec sheet on request
                 </span>

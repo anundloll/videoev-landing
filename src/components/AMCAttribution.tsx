@@ -48,19 +48,19 @@ export default function AMCAttribution() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(234,179,8,0.2)',
-            background: 'linear-gradient(135deg, rgba(234,179,8,0.04) 0%, var(--surface) 50%)',
+            border: '1px solid rgba(212,175,55,0.2)',
+            background: 'linear-gradient(135deg, rgba(212,175,55,0.04) 0%, var(--surface) 50%)',
           }}
         >
           {/* Header bar */}
           <div
             className="px-6 py-4 flex items-center justify-between"
-            style={{ borderBottom: '1px solid rgba(234,179,8,0.15)' }}
+            style={{ borderBottom: '1px solid rgba(212,175,55,0.15)' }}
           >
             <div className="flex items-center gap-3">
               <div
                 className="w-6 h-6 rounded flex items-center justify-center"
-                style={{ background: 'rgba(234,179,8,0.12)', border: '1px solid rgba(234,179,8,0.25)' }}
+                style={{ background: 'rgba(212,175,55,0.12)', border: '1px solid rgba(212,175,55,0.25)' }}
               >
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M6 1L7.5 4.5H11L8.5 6.5L9.5 10L6 8L2.5 10L3.5 6.5L1 4.5H4.5L6 1Z"
@@ -71,7 +71,7 @@ export default function AMCAttribution() {
             </div>
             <span
               className="text-xs px-2.5 py-1 rounded-full font-medium"
-              style={{ background: 'rgba(34,197,94,0.1)', color: '#22c55e', border: '1px solid rgba(34,197,94,0.2)' }}
+              style={{ background: 'rgba(34,197,94,0.1)', color: '#004225', border: '1px solid rgba(34,197,94,0.2)' }}
             >
               Active
             </span>
@@ -123,7 +123,7 @@ export default function AMCAttribution() {
           {/* Bottom bar — proof line */}
           <div
             className="px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-            style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(234,179,8,0.03)' }}
+            style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(212,175,55,0.03)' }}
           >
             <p style={{ fontSize: '0.8125rem', color: 'var(--text-3)', lineHeight: 1.5 }}>
               Clean-room matching via AMC — no PII shared. Attribution window configurable per campaign.

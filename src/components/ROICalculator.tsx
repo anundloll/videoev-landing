@@ -31,15 +31,15 @@ export default function ROICalculator() {
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-lg mx-auto mb-12">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>CPO Revenue Estimator</p>
+          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Unit Economics</p>
           <h2
             className="font-bold"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
           >
-            How much can your stations earn?
+            Projected Network Yield
           </h2>
           <p style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 300, marginTop: '1rem' }}>
-            Adjust the number of charging stalls to see your passive income estimate.
+            Every stall you add compounds the return. Drag the slider to model your network.
           </p>
         </div>
 
@@ -47,8 +47,8 @@ export default function ROICalculator() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(234,179,8,0.2)',
-            background: 'linear-gradient(135deg, rgba(234,179,8,0.04) 0%, var(--surface) 60%)',
+            border: '1px solid rgba(212,175,55,0.2)',
+            background: 'linear-gradient(135deg, rgba(212,175,55,0.04) 0%, var(--surface) 60%)',
           }}
         >
           {/* Slider row */}
@@ -66,8 +66,8 @@ export default function ROICalculator() {
                 style={{
                   fontSize: '1.25rem',
                   color: 'var(--accent)',
-                  background: 'rgba(234,179,8,0.1)',
-                  border: '1px solid rgba(234,179,8,0.25)',
+                  background: 'rgba(212,175,55,0.1)',
+                  border: '1px solid rgba(212,175,55,0.25)',
                   minWidth: '3.5rem',
                   textAlign: 'center',
                 }}
@@ -103,24 +103,24 @@ export default function ROICalculator() {
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x" style={{ '--tw-divide-color': 'var(--border)' } as React.CSSProperties}>
             <div className="px-8 py-7 text-center">
               <div
-                className="stat-num font-bold"
+                className="stat-num font-bold glow-text"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--accent)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '0.5rem' }}
               >
                 {fmt(monthly)}
               </div>
-              <div className="font-medium" style={{ fontSize: '0.875rem', marginBottom: '0.25rem' }}>Monthly revenue</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>Passive income / site</div>
+              <div className="font-medium" style={{ fontSize: '0.875rem', marginBottom: '0.25rem' }}>Estimated Monthly Passive Revenue</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>Per site, passive income</div>
             </div>
 
             <div className="px-8 py-7 text-center">
               <div
-                className="stat-num font-bold"
-                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--text-1)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '0.5rem' }}
+                className="stat-num font-bold glow-text"
+                style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', color: 'var(--accent)', letterSpacing: '-0.03em', lineHeight: 1, marginBottom: '0.5rem' }}
               >
                 {fmt(annual)}
               </div>
-              <div className="font-medium" style={{ fontSize: '0.875rem', marginBottom: '0.25rem' }}>Annual revenue</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>Per site, recurring</div>
+              <div className="font-medium" style={{ fontSize: '0.875rem', marginBottom: '0.25rem' }}>Annualized Network Yield</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-3)' }}>Recurring, no CapEx</div>
             </div>
 
             <div className="px-8 py-7 text-center">
