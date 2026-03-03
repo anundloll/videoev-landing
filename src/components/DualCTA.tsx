@@ -1,125 +1,131 @@
 'use client';
 import { openModal } from '@/lib/openModal';
 
+const CARDS = [
+  {
+    id: 'advertiser',
+    audience: 'Brands & Agencies',
+    headline: 'Reach EV drivers that buy',
+    body: 'Build targeted campaigns using VIN-confirmed audience data. Set your CPM, choose your surfaces, and track every outcome in real time. Minimum buys start at $5k.',
+    features: [
+      'VIN-confirmed audience targeting',
+      'Creative across kiosk, mobile & in-car',
+      'Real-time attribution dashboard',
+      'Brand safety — 100% contextual',
+    ],
+    cta: 'Request Media Kit',
+    sub: 'We respond within one business day',
+    type: 'advertiser' as const,
+    accentBorder: false,
+  },
+  {
+    id: 'cpo',
+    audience: 'Charge Point Operators',
+    headline: 'Turn infrastructure into income',
+    body: 'Add VideoEV screens to your stations and convert a utility cost into a recurring profit center. Automated revenue share from day one — zero upfront investment.',
+    features: [
+      'White-label kiosk & app UI',
+      'Revenue share model — zero upfront',
+      'Works with existing OCPP hardware',
+      'Full ad operations handled for you',
+    ],
+    cta: 'Become a Network Partner',
+    sub: 'Currently expanding across US networks',
+    type: 'partner' as const,
+    accentBorder: true,
+  },
+  {
+    id: 'retailer',
+    audience: 'Retailers & Venues',
+    headline: 'Drive affluent shoppers in-store',
+    body: 'EV drivers have 30% higher discretionary spend than the average consumer. Place ads at nearby chargers to pull high-intent buyers from the curb straight to your counter.',
+    features: [
+      'Geo-targeted by store proximity',
+      'Audience: $150k+ household income',
+      'Foot-traffic attribution included',
+      'Curb-to-counter measurement',
+    ],
+    cta: 'Request Media Kit',
+    sub: 'We respond within one business day',
+    type: 'advertiser' as const,
+    accentBorder: false,
+  },
+];
+
 export default function DualCTA() {
   return (
     <section className="py-24" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-xl mx-auto mb-14">
+          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Work with VideoEV</p>
           <h2
             className="font-bold"
             style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
           >
-            Two ways to work with VideoEV
+            Three ways to grow with VideoEV
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Advertisers CTA */}
-          <div
-            id="advertisers"
-            className="rounded-2xl p-8 flex flex-col"
-            style={{
-              background: 'var(--surface-2)',
-              border: '1px solid var(--border)',
-            }}
-          >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {CARDS.map((card) => (
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-6"
-              style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid rgba(234,179,8,0.2)' }}
+              key={card.id}
+              id={card.id}
+              className="rounded-2xl p-7 flex flex-col"
+              style={{
+                background: card.accentBorder
+                  ? 'linear-gradient(135deg, rgba(234,179,8,0.06) 0%, var(--surface-2) 100%)'
+                  : 'var(--surface-2)',
+                border: card.accentBorder
+                  ? '1px solid rgba(234,179,8,0.2)'
+                  : '1px solid var(--border)',
+              }}
             >
-              📣
+              {/* Number marker */}
+              <div
+                className="w-9 h-9 rounded-lg flex items-center justify-center mb-6 font-bold"
+                style={{
+                  background: card.accentBorder ? 'rgba(234,179,8,0.12)' : 'rgba(255,255,255,0.05)',
+                  border: card.accentBorder ? '1px solid rgba(234,179,8,0.25)' : '1px solid var(--border)',
+                  color: card.accentBorder ? 'var(--accent)' : 'var(--text-3)',
+                  fontSize: '0.75rem',
+                  letterSpacing: '0.04em',
+                }}
+              >
+                0{CARDS.indexOf(card) + 1}
+              </div>
+
+              <div className="eyebrow mb-3">{card.audience}</div>
+              <h3 className="font-bold mb-3" style={{ fontSize: '1.3125rem', letterSpacing: '-0.01em' }}>
+                {card.headline}
+              </h3>
+              <p style={{ color: 'var(--text-2)', fontSize: '0.9rem', lineHeight: 1.65, flex: 1, marginBottom: '1.75rem', fontWeight: 300 }}>
+                {card.body}
+              </p>
+
+              <ul className="flex flex-col gap-2 mb-7">
+                {card.features.map((item) => (
+                  <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: 'var(--text-2)' }}>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
+                      <circle cx="7" cy="7" r="6" stroke="var(--accent)" strokeWidth="1.5"/>
+                      <path d="M4.5 7l1.8 1.8L9.5 5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <button onClick={() => openModal(card.type)} className="btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
+                {card.cta}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '0.75rem' }}>
+                {card.sub}
+              </p>
             </div>
-            <div className="eyebrow mb-3">For Advertisers & Agencies</div>
-            <h3 className="font-bold mb-3" style={{ fontSize: '1.5rem' }}>
-              Reach EV drivers that buy
-            </h3>
-            <p style={{ color: 'var(--text-2)', fontSize: '0.9375rem', lineHeight: 1.65, flex: 1, marginBottom: '2rem' }}>
-              Build targeted campaigns using VIN-confirmed audience data. Set your
-              CPM, choose your surfaces, and track every outcome in real time.
-              Minimum buys start at $5k.
-            </p>
-
-            <ul className="flex flex-col gap-2 mb-8">
-              {[
-                'VIN-confirmed audience targeting',
-                'Creative across kiosk, mobile & in-car',
-                'Real-time attribution dashboard',
-                'Brand safety — 100% contextual',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: 'var(--text-2)' }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                    <circle cx="7" cy="7" r="6" stroke="var(--accent)" strokeWidth="1.5"/>
-                    <path d="M4.5 7l1.8 1.8L9.5 5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <button onClick={() => openModal('advertiser')} className="btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-              Request Media Kit
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '0.75rem' }}>
-              We respond within one business day
-            </p>
-          </div>
-
-          {/* Charging Networks CTA */}
-          <div
-            id="partners"
-            className="rounded-2xl p-8 flex flex-col"
-            style={{
-              background: 'linear-gradient(135deg, rgba(234,179,8,0.06) 0%, var(--surface-2) 100%)',
-              border: '1px solid rgba(234,179,8,0.2)',
-            }}
-          >
-            <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center text-xl mb-6"
-              style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid rgba(234,179,8,0.25)' }}
-            >
-              ⚡
-            </div>
-            <div className="eyebrow mb-3">For Charging Networks</div>
-            <h3 className="font-bold mb-3" style={{ fontSize: '1.5rem' }}>
-              Monetise your charging infrastructure
-            </h3>
-            <p style={{ color: 'var(--text-2)', fontSize: '0.9375rem', lineHeight: 1.65, flex: 1, marginBottom: '2rem' }}>
-              Turn your station screens, mobile app, and in-car integrations into
-              a premium media network. White-label the VideoEV platform to your
-              brand. Revenue share from day one.
-            </p>
-
-            <ul className="flex flex-col gap-2 mb-8">
-              {[
-                'White-label kiosk & app UI',
-                'Revenue share model — zero upfront',
-                'Your brand, our ad operations',
-                'Works with existing OCPP hardware',
-              ].map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-sm" style={{ color: 'var(--text-2)' }}>
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
-                    <circle cx="7" cy="7" r="6" stroke="var(--accent)" strokeWidth="1.5"/>
-                    <path d="M4.5 7l1.8 1.8L9.5 5" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <button onClick={() => openModal('partner')} className="btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
-              Become a Network Partner
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '0.75rem' }}>
-              Currently expanding with US charging networks
-            </p>
-          </div>
+          ))}
         </div>
       </div>
     </section>

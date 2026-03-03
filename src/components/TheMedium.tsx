@@ -22,9 +22,30 @@ const POINTS = [
 ];
 
 const COMPARE = [
-  { medium: 'Connected TV', cpm: '$25–$45', audience: 'Inferred', attention: 'Lean-back', featured: false },
-  { medium: 'VideoEV', cpm: '$18–$34', audience: 'VIN-confirmed', attention: 'Captive 30 min', featured: true },
-  { medium: 'Digital OOH', cpm: '$8–$15', audience: 'Geofence', attention: 'Walk-by glance', featured: false },
+  {
+    medium: 'Billboard',
+    dwell: '< 5 seconds',
+    audience: 'Passive commuter',
+    data: 'Estimated reach',
+    attribution: 'None',
+    featured: false,
+  },
+  {
+    medium: 'Gas Station TV',
+    dwell: '3–5 minutes',
+    audience: 'General public',
+    data: 'Fuel volume',
+    attribution: 'Limited',
+    featured: false,
+  },
+  {
+    medium: 'VideoEV',
+    dwell: '15–40 minutes',
+    audience: 'Affluent EV drivers',
+    data: 'Real-time SoC data',
+    attribution: 'Amazon AMC',
+    featured: true,
+  },
 ];
 
 export default function TheMedium() {
@@ -112,14 +133,15 @@ export default function TheMedium() {
 
           {/* Rows */}
           {[
-            { label: 'CPM', key: 'cpm' as const },
-            { label: 'Audience signal', key: 'audience' as const },
-            { label: 'Attention quality', key: 'attention' as const },
-          ].map((row) => (
+            { label: 'Dwell Time', key: 'dwell' as const },
+            { label: 'Audience Focus', key: 'audience' as const },
+            { label: 'Data Feedback', key: 'data' as const },
+            { label: 'Conversion Link', key: 'attribution' as const },
+          ].map((row, i) => (
             <div
               key={row.label}
               className="grid grid-cols-4"
-              style={{ borderBottom: '1px solid var(--border)' }}
+              style={{ borderBottom: i < 3 ? '1px solid var(--border)' : 'none' }}
             >
               <div
                 className="px-6 py-4"
@@ -134,7 +156,7 @@ export default function TheMedium() {
                   style={{
                     background: c.featured ? 'rgba(234,179,8,0.03)' : 'transparent',
                     borderLeft: '1px solid var(--border)',
-                    fontSize: '0.9rem',
+                    fontSize: '0.875rem',
                     fontWeight: c.featured ? 600 : 400,
                     color: c.featured ? 'var(--text-1)' : 'var(--text-3)',
                   }}
