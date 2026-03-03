@@ -24,26 +24,26 @@ const POINTS = [
 const COMPARE = [
   {
     medium: 'Billboard',
-    dwell: '< 5 seconds',
-    audience: 'Passive commuter',
-    data: 'Estimated reach',
-    attribution: 'None',
+    dwell: '5 seconds',
+    audience: 'General public',
+    data: 'Static',
+    attribution: 'Estimated',
     featured: false,
   },
   {
     medium: 'Gas Station TV',
-    dwell: '3–5 minutes',
+    dwell: '4 minutes',
     audience: 'General public',
     data: 'Fuel volume',
     attribution: 'Limited',
     featured: false,
   },
   {
-    medium: 'VideoEV',
+    medium: 'VideoEV (VMN)',
     dwell: '15–40 minutes',
-    audience: 'Affluent EV drivers',
-    data: 'Real-time SoC data',
-    attribution: 'Amazon AMC',
+    audience: 'Affluent / Tech Early Adopters',
+    data: 'Bi-directional Vehicle Data',
+    attribution: 'Closed-Loop (AMC)',
     featured: true,
   },
 ];
@@ -119,7 +119,7 @@ export default function TheMedium() {
                 key={c.medium}
                 className="px-6 py-4 text-center font-semibold"
                 style={{
-                  background: c.featured ? 'rgba(234,179,8,0.06)' : 'transparent',
+                  background: c.featured ? 'rgba(34,197,94,0.06)' : 'transparent',
                   borderLeft: '1px solid var(--border)',
                   color: c.featured ? 'var(--accent)' : 'var(--text-2)',
                   fontSize: c.featured ? '0.9375rem' : '0.875rem',
@@ -134,9 +134,9 @@ export default function TheMedium() {
           {/* Rows */}
           {[
             { label: 'Dwell Time', key: 'dwell' as const },
-            { label: 'Audience Focus', key: 'audience' as const },
-            { label: 'Data Feedback', key: 'data' as const },
-            { label: 'Conversion Link', key: 'attribution' as const },
+            { label: 'Audience', key: 'audience' as const },
+            { label: 'Intelligence', key: 'data' as const },
+            { label: 'Attribution', key: 'attribution' as const },
           ].map((row, i) => (
             <div
               key={row.label}
@@ -154,7 +154,7 @@ export default function TheMedium() {
                   key={c.medium}
                   className="px-6 py-4 text-center"
                   style={{
-                    background: c.featured ? 'rgba(234,179,8,0.03)' : 'transparent',
+                    background: c.featured ? 'rgba(34,197,94,0.03)' : 'transparent',
                     borderLeft: '1px solid var(--border)',
                     fontSize: '0.875rem',
                     fontWeight: c.featured ? 600 : 400,

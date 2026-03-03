@@ -3,6 +3,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import StakeholderSection from '@/components/StakeholderSection';
+import IndustryDefinitions from '@/components/IndustryDefinitions';
 import TheMedium from '@/components/TheMedium';
 import AMCAttribution from '@/components/AMCAttribution';
 import HowItWorks from '@/components/HowItWorks';
@@ -33,6 +34,7 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <StakeholderSection />
+      <IndustryDefinitions />
       <TheMedium />
       <AMCAttribution />
       <HowItWorks />

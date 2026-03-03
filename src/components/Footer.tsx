@@ -10,10 +10,12 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div
-                className="w-7 h-7 rounded-md flex items-center justify-center text-black font-bold text-sm"
+                className="w-7 h-7 rounded-md flex items-center justify-center"
                 style={{ background: 'var(--accent)' }}
               >
-                ⚡
+                <svg width="13" height="16" viewBox="0 0 13 16" fill="none">
+                  <path d="M7.5 1L1 9h5.5L5 15l7-8.5H6L7.5 1Z" fill="#000" strokeLinejoin="round"/>
+                </svg>
               </div>
               <span className="font-semibold text-white text-base tracking-tight">VideoEV</span>
             </div>
