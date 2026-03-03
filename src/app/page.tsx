@@ -9,6 +9,7 @@ import Audience from '@/components/Audience';
 import Targeting from '@/components/Targeting';
 import DualCTA from '@/components/DualCTA';
 import Footer from '@/components/Footer';
+import ContactModal from '@/components/ContactModal';
 
 export const metadata: Metadata = {
   title: 'VideoEV — Premium Video Advertising at EV Charging Stations',
@@ -34,6 +35,7 @@ export default function Home() {
       <Targeting />
       <DualCTA />
       <Footer />
+      <ContactModal />
     </main>
   );
 }

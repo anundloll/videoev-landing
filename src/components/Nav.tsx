@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';
+import { openModal } from '@/lib/openModal';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -50,12 +51,12 @@ export default function Nav() {
 
         {/* CTA buttons */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="#partners" className="btn-ghost" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>
+          <button onClick={() => openModal('partner')} className="btn-ghost" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>
             For Networks
-          </a>
-          <a href="#advertisers" className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>
+          </button>
+          <button onClick={() => openModal('advertiser')} className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.8125rem' }}>
             Get Media Kit
-          </a>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -78,8 +79,8 @@ export default function Nav() {
           <a href="#audience" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Audience</a>
           <a href="https://demo.videoev.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Live Demo</a>
           <div className="flex flex-col gap-3 pt-2">
-            <a href="#partners" className="btn-ghost">For Charging Networks</a>
-            <a href="#advertisers" className="btn-primary">Get Media Kit</a>
+            <button onClick={() => { openModal('partner'); setOpen(false); }} className="btn-ghost">For Charging Networks</button>
+            <button onClick={() => { openModal('advertiser'); setOpen(false); }} className="btn-primary">Get Media Kit</button>
           </div>
         </div>
       )}

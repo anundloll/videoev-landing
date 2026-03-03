@@ -1,3 +1,6 @@
+'use client';
+import { openModal } from '@/lib/openModal';
+
 export default function DualCTA() {
   return (
     <section className="py-24" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
@@ -54,12 +57,12 @@ export default function DualCTA() {
               ))}
             </ul>
 
-            <a href="mailto:advertising@videoev.com?subject=Media Kit Request" className="btn-primary" style={{ justifyContent: 'center' }}>
+            <button onClick={() => openModal('advertiser')} className="btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
               Request Media Kit
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </button>
             <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '0.75rem' }}>
               We respond within one business day
             </p>
@@ -107,12 +110,12 @@ export default function DualCTA() {
               ))}
             </ul>
 
-            <a href="mailto:partners@videoev.com?subject=Network Partnership Inquiry" className="btn-primary" style={{ justifyContent: 'center' }}>
+            <button onClick={() => openModal('partner')} className="btn-primary" style={{ justifyContent: 'center', width: '100%' }}>
               Become a Network Partner
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </a>
+            </button>
             <p style={{ fontSize: '0.78rem', color: 'var(--text-3)', textAlign: 'center', marginTop: '0.75rem' }}>
               Currently expanding with US charging networks
             </p>

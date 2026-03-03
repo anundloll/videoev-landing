@@ -1,3 +1,6 @@
+'use client';
+import { openModal } from '@/lib/openModal';
+
 export default function Hero() {
   return (
     <section
@@ -67,15 +70,15 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="fade-up fade-up-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a href="#advertisers" className="btn-primary" style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}>
+          <button onClick={() => openModal('advertiser')} className="btn-primary" style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}>
             Request Media Kit
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
-          <a href="#partners" className="btn-ghost" style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}>
+          </button>
+          <button onClick={() => openModal('partner')} className="btn-ghost" style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}>
             Partner with Us
-          </a>
+          </button>
         </div>
 
         {/* Trust line */}
