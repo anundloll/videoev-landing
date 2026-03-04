@@ -129,7 +129,7 @@ export default function ContactModal() {
         className="relative w-full max-w-lg rounded-2xl"
         style={{
           background: '#0d0d0d',
-          border: '1px solid rgba(212,175,55,0.2)',
+          border: '1px solid rgba(0,66,37,0.35)',
           boxShadow: '0 32px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04)',
         }}
         onClick={e => e.stopPropagation()}
@@ -148,7 +148,7 @@ export default function ContactModal() {
           <div className="text-center px-8 py-12">
             <div
               className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
-              style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}
+              style={{ background: 'rgba(0,66,37,0.15)', border: '1px solid rgba(0,66,37,0.4)' }}
             >
               <CheckIcon />
             </div>

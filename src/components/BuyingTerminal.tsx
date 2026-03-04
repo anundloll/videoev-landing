@@ -131,15 +131,15 @@ export default function BuyingTerminal() {
             {/* Amazon DSP connect */}
             <div
               className="rounded-2xl p-5"
-              style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.18)' }}
+              style={{ background: 'rgba(0,66,37,0.08)', border: '1px solid rgba(0,66,37,0.3)' }}
             >
               <div className="flex items-center gap-2 mb-2">
                 <div
                   className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0"
-                  style={{ background: 'rgba(212,175,55,0.15)' }}
+                  style={{ background: 'rgba(0,66,37,0.2)' }}
                 >
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path d="M2 6h8M6 2l4 4-4 4" stroke="#D4AF37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M2 6h8M6 2l4 4-4 4" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </div>
                 <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--accent)' }}>Amazon DSP Connect</span>

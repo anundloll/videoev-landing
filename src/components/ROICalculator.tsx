@@ -47,8 +47,8 @@ export default function ROICalculator() {
         <div
           className="rounded-2xl overflow-hidden"
           style={{
-            border: '1px solid rgba(212,175,55,0.2)',
-            background: 'linear-gradient(135deg, rgba(212,175,55,0.04) 0%, var(--surface) 60%)',
+            border: '1px solid rgba(0,66,37,0.3)',
+            background: 'linear-gradient(135deg, rgba(0,66,37,0.08) 0%, var(--surface) 60%)',
           }}
         >
           {/* Slider row */}
@@ -66,8 +66,8 @@ export default function ROICalculator() {
                 style={{
                   fontSize: '1.25rem',
                   color: 'var(--accent)',
-                  background: 'rgba(212,175,55,0.1)',
-                  border: '1px solid rgba(212,175,55,0.25)',
+                  background: 'rgba(0,66,37,0.15)',
+                  border: '1px solid rgba(0,66,37,0.4)',
                   minWidth: '3.5rem',
                   textAlign: 'center',
                 }}
@@ -88,7 +88,7 @@ export default function ROICalculator() {
                 appearance: 'none',
                 height: '4px',
                 borderRadius: '2px',
-                background: `linear-gradient(to right, var(--accent) 0%, var(--accent) ${stalls}%, rgba(255,255,255,0.1) ${stalls}%, rgba(255,255,255,0.1) 100%)`,
+                background: `linear-gradient(to right, var(--accent-green) 0%, var(--accent-green) ${stalls}%, rgba(255,255,255,0.1) ${stalls}%, rgba(255,255,255,0.1) 100%)`,
                 cursor: 'pointer',
                 outline: 'none',
               }}

@@ -141,8 +141,8 @@ export default function Hero() {
               className="rounded-2xl"
               style={{
                 background: 'rgba(5,5,5,0.96)',
-                border: '1px solid rgba(212,175,55,0.22)',
-                boxShadow: '0 32px 64px rgba(0,0,0,0.6), 0 0 40px rgba(212,175,55,0.04)',
+                border: '1px solid rgba(0,66,37,0.4)',
+                boxShadow: '0 32px 64px rgba(0,0,0,0.6), 0 0 40px rgba(0,66,37,0.06)',
                 padding: '20px',
                 display: 'flex',
                 flexDirection: 'column',
@@ -153,7 +153,7 @@ export default function Hero() {
                 <span style={{ fontSize: '0.5rem', color: 'var(--accent)', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>Buying Terminal</span>
                 <div
                   className="rounded px-1.5 py-0.5"
-                  style={{ background: 'rgba(212,175,55,0.12)', fontSize: '0.45rem', color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.08em' }}
+                  style={{ background: 'rgba(0,66,37,0.25)', fontSize: '0.45rem', color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.08em' }}
                 >
                   LIVE
                 </div>
@@ -172,8 +172,8 @@ export default function Hero() {
                   <div className="stat-num font-bold" style={{ fontSize: '0.875rem', color: 'var(--accent)' }}>$28</div>
                 </div>
               </div>
-              <div className="rounded-lg text-center" style={{ background: 'var(--accent)', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: '0.5rem', fontWeight: 700, color: '#000', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Book Inventory →</span>
+              <div className="rounded-lg text-center" style={{ background: 'var(--accent-green)', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontSize: '0.5rem', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Book Inventory →</span>
               </div>
             </div>
 
@@ -199,15 +199,15 @@ export default function Hero() {
                 <div className="font-bold stat-num" style={{ fontSize: '1.8rem', color: 'var(--text-1)', lineHeight: 1 }}>62%</div>
                 <div style={{ fontSize: '0.45rem', color: 'var(--text-3)' }}>18 min remaining</div>
                 <div className="w-full rounded-full overflow-hidden" style={{ height: '3px', background: 'rgba(255,255,255,0.08)' }}>
-                  <div className="h-full rounded-full" style={{ width: '62%', background: 'var(--accent)' }} />
+                  <div className="h-full rounded-full" style={{ width: '62%', background: 'var(--accent-green)' }} />
                 </div>
               </div>
-              <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.15)' }}>
+              <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(0,66,37,0.15)', border: '1px solid rgba(0,66,37,0.4)' }}>
                 <div style={{ fontSize: '0.45rem', color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '2px' }}>This session</div>
                 <div className="stat-num font-bold" style={{ fontSize: '0.875rem', color: 'var(--accent)' }}>$3.20 earned</div>
               </div>
-              <div className="rounded-lg text-center" style={{ background: 'rgba(212,175,55,0.1)', border: '1px solid rgba(212,175,55,0.25)', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ fontSize: '0.5rem', fontWeight: 700, color: 'var(--accent)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Connect Network →</span>
+              <div className="rounded-lg text-center" style={{ background: 'rgba(0,66,37,0.25)', border: '1px solid rgba(0,66,37,0.5)', height: '26px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontSize: '0.5rem', fontWeight: 700, color: '#fff', letterSpacing: '0.08em', textTransform: 'uppercase' }}>Connect Network →</span>
               </div>
             </div>
           </div>

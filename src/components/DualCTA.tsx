@@ -74,10 +74,10 @@ export default function DualCTA() {
               className="rounded-2xl p-7 flex flex-col"
               style={{
                 background: card.accentBorder
-                  ? 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, var(--surface-2) 100%)'
+                  ? 'linear-gradient(135deg, rgba(0,66,37,0.1) 0%, var(--surface-2) 100%)'
                   : 'var(--surface-2)',
                 border: card.accentBorder
-                  ? '1px solid rgba(212,175,55,0.2)'
+                  ? '1px solid rgba(0,66,37,0.35)'
                   : '1px solid var(--border)',
               }}
             >
@@ -85,8 +85,8 @@ export default function DualCTA() {
               <div
                 className="w-9 h-9 rounded-lg flex items-center justify-center mb-6 font-bold"
                 style={{
-                  background: card.accentBorder ? 'rgba(212,175,55,0.12)' : 'rgba(255,255,255,0.05)',
-                  border: card.accentBorder ? '1px solid rgba(212,175,55,0.25)' : '1px solid var(--border)',
+                  background: card.accentBorder ? 'rgba(0,66,37,0.2)' : 'rgba(255,255,255,0.05)',
+                  border: card.accentBorder ? '1px solid rgba(0,66,37,0.4)' : '1px solid var(--border)',
                   color: card.accentBorder ? 'var(--accent)' : 'var(--text-3)',
                   fontSize: '0.75rem',
                   letterSpacing: '0.04em',

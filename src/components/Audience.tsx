@@ -108,7 +108,7 @@ export default function Audience() {
               {/* Footer */}
               <div
                 className="px-5 py-3 flex items-center justify-between"
-                style={{ borderTop: '1px solid var(--border)', background: 'rgba(212,175,55,0.03)' }}
+                style={{ borderTop: '1px solid var(--border)', background: 'rgba(0,66,37,0.04)' }}
               >
                 <span style={{ fontSize: '0.78rem', color: 'var(--text-3)' }}>
                   + 44 more vehicle makes tracked

@@ -53,7 +53,7 @@ export default function HowItWorks() {
               top: '22px',
               left: '8%',
               right: '8%',
-              background: 'linear-gradient(90deg, transparent, rgba(212,175,55,0.2) 20%, rgba(212,175,55,0.2) 80%, transparent)',
+              background: 'linear-gradient(90deg, transparent, rgba(0,66,37,0.5) 20%, rgba(0,66,37,0.5) 80%, transparent)',
             }}
           />
 
@@ -64,8 +64,8 @@ export default function HowItWorks() {
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center relative z-10 mb-6"
                   style={{
-                    background: 'rgba(212,175,55,0.08)',
-                    border: '1px solid rgba(212,175,55,0.25)',
+                    background: 'rgba(0,66,37,0.25)',
+                    border: '1px solid rgba(0,66,37,0.5)',
                     color: 'var(--accent)',
                     fontWeight: 700,
                     fontSize: '0.875rem',

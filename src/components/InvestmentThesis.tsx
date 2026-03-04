@@ -42,8 +42,8 @@ export default function InvestmentThesis() {
             <div
               className="rounded-xl px-5 py-4"
               style={{
-                background: 'rgba(212,175,55,0.04)',
-                border: '1px solid rgba(212,175,55,0.15)',
+                background: 'rgba(0,66,37,0.06)',
+                border: '1px solid rgba(0,66,37,0.3)',
               }}
             >
               <div className="flex items-start gap-3">
@@ -94,8 +94,8 @@ export default function InvestmentThesis() {
             <div
               className="rounded-2xl px-6 py-5 flex items-center justify-between gap-4"
               style={{
-                background: 'linear-gradient(135deg, rgba(212,175,55,0.06) 0%, var(--surface) 100%)',
-                border: '1px solid rgba(212,175,55,0.2)',
+                background: 'linear-gradient(135deg, rgba(0,66,37,0.1) 0%, var(--surface) 100%)',
+                border: '1px solid rgba(0,66,37,0.3)',
               }}
             >
               <div>

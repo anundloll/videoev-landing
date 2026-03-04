@@ -2,9 +2,10 @@
 
 :root {
   /* British Racing Green × Gold system */
-  --accent: #D4AF37;           /* Gold — CTAs, numbers, interactive highlights */
-  --accent-dim: #B8962E;       /* Darker gold for hover */
-  --accent-green: #004225;     /* British Racing Green — surface tints */
+  --accent: #D4AF37;             /* Gold — headline text accents, eyebrows, data labels */
+  --accent-dim: #B8962E;         /* Darker gold */
+  --accent-green: #004225;       /* British Racing Green — primary interactive */
+  --accent-green-hover: #005c32; /* BRG hover */
   --bg: #050505;
   --surface: rgba(255,255,255,0.03);
   --surface-solid: #0a0a0a;
@@ -80,8 +81,8 @@ h1, h2, h3, h4 {
 }
 
 .card-hover:hover {
-  border-color: rgba(212, 175, 55, 0.2);
-  box-shadow: 0 0 30px rgba(0, 66, 37, 0.08), 0 0 0 1px rgba(212,175,55,0.05);
+  border-color: rgba(0, 66, 37, 0.5);
+  box-shadow: 0 0 30px rgba(0, 66, 37, 0.12), 0 0 0 1px rgba(0,66,37,0.08);
 }
 
 /* Green-tinted card for BRG surfaces */
@@ -93,13 +94,15 @@ h1, h2, h3, h4 {
   border-radius: 16px;
 }
 
+/* Primary CTA — British Racing Green */
 .btn-primary {
-  background: var(--accent);
-  color: #000;
+  background: var(--accent-green);
+  color: #fff;
   font-weight: 700;
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
+  border: 1px solid rgba(212,175,55,0.2);
   transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
   display: inline-flex;
   align-items: center;
@@ -110,9 +113,9 @@ h1, h2, h3, h4 {
 }
 
 .btn-primary:hover {
-  background: var(--accent-dim);
+  background: var(--accent-green-hover);
   transform: translateY(-1px);
-  box-shadow: 0 0 24px rgba(212, 175, 55, 0.35), 0 4px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 24px rgba(0, 66, 37, 0.5), 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .btn-ghost {
@@ -142,8 +145,8 @@ h1, h2, h3, h4 {
   gap: 0.5rem;
   padding: 0.35rem 0.875rem;
   border-radius: 99px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(0, 66, 37, 0.4);
+  background: rgba(0, 66, 37, 0.12);
   margin-bottom: 1.25rem;
 }
 
@@ -153,9 +156,9 @@ h1, h2, h3, h4 {
 }
 
 .glow {
-  box-shadow: 0 0 60px rgba(212, 175, 55, 0.1);
+  box-shadow: 0 0 60px rgba(0, 66, 37, 0.15);
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  text-shadow: none;
 }

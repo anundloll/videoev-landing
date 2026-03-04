@@ -75,7 +75,7 @@ export default function EnterpriseIntegrations() {
               key={intg.name}
               className="card card-hover p-6"
               style={{
-                borderColor: intg.accent ? 'rgba(212,175,55,0.2)' : 'var(--border)',
+                borderColor: intg.accent ? 'rgba(0,66,37,0.4)' : 'var(--border)',
                 background: intg.accent ? 'rgba(0,66,37,0.08)' : 'rgba(255,255,255,0.02)',
               }}
             >
@@ -98,7 +98,7 @@ export default function EnterpriseIntegrations() {
                     fontWeight: 700,
                     letterSpacing: '0.07em',
                     textTransform: 'uppercase',
-                    background: intg.accent ? 'rgba(212,175,55,0.12)' : 'rgba(255,255,255,0.05)',
+                    background: intg.accent ? 'rgba(0,66,37,0.2)' : 'rgba(255,255,255,0.05)',
                     color: intg.accent ? 'var(--accent)' : 'var(--text-3)',
                   }}
                 >

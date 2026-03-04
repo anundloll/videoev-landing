@@ -119,7 +119,7 @@ export default function TheMedium() {
                 key={c.medium}
                 className="px-6 py-4 text-center font-semibold"
                 style={{
-                  background: c.featured ? 'rgba(212,175,55,0.06)' : 'transparent',
+                  background: c.featured ? 'rgba(0,66,37,0.1)' : 'transparent',
                   borderLeft: '1px solid var(--border)',
                   color: c.featured ? 'var(--accent)' : 'var(--text-2)',
                   fontSize: c.featured ? '0.9375rem' : '0.875rem',
@@ -154,7 +154,7 @@ export default function TheMedium() {
                   key={c.medium}
                   className="px-6 py-4 text-center"
                   style={{
-                    background: c.featured ? 'rgba(212,175,55,0.03)' : 'transparent',
+                    background: c.featured ? 'rgba(0,66,37,0.05)' : 'transparent',
                     borderLeft: '1px solid var(--border)',
                     fontSize: '0.875rem',
                     fontWeight: c.featured ? 600 : 400,

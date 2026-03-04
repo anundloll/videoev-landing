@@ -57,7 +57,7 @@ export default function RevenueTerminal() {
           <div
             className="lg:col-span-3 rounded-2xl overflow-hidden"
             style={{
-              border: '1px solid rgba(212,175,55,0.2)',
+              border: '1px solid rgba(0,66,37,0.3)',
               background: 'linear-gradient(135deg, rgba(0,66,37,0.08) 0%, rgba(5,5,5,0.98) 60%)',
             }}
           >
@@ -72,8 +72,8 @@ export default function RevenueTerminal() {
                   style={{
                     fontSize: '1.25rem',
                     color: 'var(--accent)',
-                    background: 'rgba(212,175,55,0.1)',
-                    border: '1px solid rgba(212,175,55,0.25)',
+                    background: 'rgba(0,66,37,0.15)',
+                    border: '1px solid rgba(0,66,37,0.4)',
                     minWidth: '3.5rem',
                     textAlign: 'center',
                   }}
@@ -93,7 +93,7 @@ export default function RevenueTerminal() {
                   appearance: 'none',
                   height: '4px',
                   borderRadius: '2px',
-                  background: `linear-gradient(to right, var(--accent) 0%, var(--accent) ${stalls}%, rgba(255,255,255,0.1) ${stalls}%, rgba(255,255,255,0.1) 100%)`,
+                  background: `linear-gradient(to right, var(--accent-green) 0%, var(--accent-green) ${stalls}%, rgba(255,255,255,0.1) ${stalls}%, rgba(255,255,255,0.1) 100%)`,
                   cursor: 'pointer',
                   outline: 'none',
                 }}
@@ -180,7 +180,7 @@ export default function RevenueTerminal() {
             {/* OCPP badge */}
             <div
               className="rounded-xl px-4 py-3 mt-2"
-              style={{ background: 'rgba(212,175,55,0.05)', border: '1px solid rgba(212,175,55,0.15)' }}
+              style={{ background: 'rgba(0,66,37,0.08)', border: '1px solid rgba(0,66,37,0.3)' }}
             >
               <div style={{ fontSize: '0.65rem', color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '4px' }}>
                 Hardware-Agnostic

@@ -164,67 +164,84 @@ export default function About() {
             </div>
           </div>
 
-          {/* Credentials */}
+          {/* Team Behind the Moat */}
           <div className="mb-16">
-            <p className="eyebrow" style={{ marginBottom: '1.25rem' }}>Background</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                {
-                  role: 'Director, Strategy & BD',
-                  org: 'Comcast Advertising',
-                  years: '2020 – 2026',
-                  note: 'Mastercard closed-loop attribution · Effectv national sales strategy',
-                  accent: true,
-                },
-                {
-                  role: 'Founder & CEO',
-                  org: 'VideoEV',
-                  years: '2025 – Present',
-                  note: 'Self-serve Vehicle Media Network · OCPP 2.0.1 · Amazon AMC',
-                  accent: true,
-                },
-                {
-                  role: 'Strategy & Partnerships',
-                  org: 'Media & Entertainment',
-                  years: 'Prior',
-                  note: 'Cross-screen audience measurement · programmatic strategy',
-                  accent: false,
-                },
-                {
-                  role: 'B.S. Business',
-                  org: 'University',
-                  years: 'Academic',
-                  note: 'Finance & Marketing concentration',
-                  accent: false,
-                },
-              ].map((item) => (
-                <div
-                  key={item.org}
-                  className="rounded-xl p-5"
-                  style={{
-                    background: item.accent ? 'rgba(0,66,37,0.08)' : 'rgba(255,255,255,0.02)',
-                    border: `1px solid ${item.accent ? 'rgba(212,175,55,0.18)' : 'var(--border)'}`,
-                  }}
-                >
-                  <div className="font-semibold" style={{ fontSize: '0.9375rem', marginBottom: '2px' }}>
-                    {item.role}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: '0.8125rem',
-                      color: item.accent ? 'var(--accent)' : 'var(--text-3)',
-                      marginBottom: '0.625rem',
-                      fontWeight: 500,
-                    }}
-                  >
-                    {item.org} · {item.years}
-                  </div>
-                  <p style={{ fontSize: '0.8125rem', color: 'var(--text-3)', lineHeight: 1.55 }}>
-                    {item.note}
-                  </p>
+            <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>The Team Behind the Moat</p>
+            <h2
+              className="font-bold"
+              style={{
+                fontSize: 'clamp(1.625rem, 3vw, 2.25rem)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.015em',
+                marginBottom: '1.75rem',
+              }}
+            >
+              Built by the Architects of Modern Video Attribution.
+            </h2>
+
+            {/* Founder card */}
+            <div
+              className="rounded-2xl p-7 mb-8"
+              style={{
+                background: 'rgba(0,66,37,0.08)',
+                border: '1px solid rgba(0,66,37,0.3)',
+              }}
+            >
+              <div className="mb-6">
+                <div className="font-bold" style={{ fontSize: '1.125rem', letterSpacing: '-0.01em', marginBottom: '3px' }}>
+                  Arvin Nundloll
                 </div>
-              ))}
+                <div className="eyebrow" style={{ color: 'var(--accent)', fontSize: '0.65rem' }}>
+                  Founder &amp; CEO · VideoEV
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-4">
+                {[
+                  'Former Director of Strategy & Business Development at Comcast Advertising and Senior Product Manager at Amazon.',
+                  'Pioneered closed-loop video attribution by launching a first-of-its-kind commerce-data partnership with Mastercard, proving $6M+ in incremental sales for major retailers.',
+                  "Architected the 'Ads-in-a-Box' platform for FreeWheel, bundling SSP/DSP integrations to scale mid-market publisher revenue.",
+                ].map((bullet) => (
+                  <div key={bullet} className="flex gap-3">
+                    <div
+                      className="flex-shrink-0 rounded-full mt-2"
+                      style={{ width: '5px', height: '5px', background: 'var(--accent)' }}
+                    />
+                    <p style={{ fontSize: '0.9375rem', color: 'var(--text-2)', lineHeight: 1.7, fontWeight: 300 }}>
+                      {bullet}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
+
+            {/* Founder quote */}
+            <blockquote
+              className="rounded-2xl px-8 py-7"
+              style={{
+                background: 'rgba(0,66,37,0.05)',
+                border: '1px solid rgba(0,66,37,0.2)',
+                borderLeft: '3px solid var(--accent)',
+              }}
+            >
+              <p
+                style={{
+                  fontSize: 'clamp(1rem, 1.75vw, 1.25rem)',
+                  lineHeight: 1.6,
+                  fontWeight: 400,
+                  color: 'var(--text-1)',
+                  marginBottom: '1rem',
+                }}
+              >
+                &ldquo;At Comcast, I built the multi-tier attribution models that justified premium
+                video CPMs for 10,000+ customers. VideoEV takes that exact
+                &lsquo;Ads-in-a-Box&rsquo; framework and applies it to the fastest-growing
+                physical real estate in the world: the EV charging stall.&rdquo;
+              </p>
+              <footer style={{ fontSize: '0.8125rem', color: 'var(--text-3)', letterSpacing: '0.04em' }}>
+                ARVIN NUNDLOLL · FOUNDER, VIDEOEV
+              </footer>
+            </blockquote>
           </div>
 
           {/* Why Now */}
@@ -271,8 +288,8 @@ export default function About() {
           <div
             className="rounded-2xl px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6"
             style={{
-              background: 'rgba(212,175,55,0.04)',
-              border: '1px solid rgba(212,175,55,0.15)',
+              background: 'rgba(0,66,37,0.08)',
+              border: '1px solid rgba(0,66,37,0.3)',
             }}
           >
             <div>
