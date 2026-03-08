@@ -78,7 +78,7 @@ export default function BuyingTerminal() {
                       fontSize: '0.55rem',
                       fontWeight: 700,
                       letterSpacing: '0.06em',
-                      background: s.badge === 'ULTRA PREMIUM' ? 'rgba(212,175,55,0.15)' : 'rgba(255,255,255,0.06)',
+                      background: s.badge === 'ULTRA PREMIUM' ? 'rgba(0,168,150,0.15)' : 'rgba(255,255,255,0.06)',
                       color: s.badge === 'ULTRA PREMIUM' ? 'var(--accent)' : 'var(--text-3)',
                     }}
                   >

@@ -236,8 +236,8 @@ export default function TechnologyPage() {
                     <div
                       className="inline-block px-2 py-0.5 rounded-full mb-2"
                       style={{
-                        background: 'rgba(212,175,55,0.1)',
-                        border: '1px solid rgba(212,175,55,0.25)',
+                        background: 'rgba(0,168,150,0.1)',
+                        border: '1px solid rgba(0,168,150,0.25)',
                         color: 'var(--accent)',
                         fontSize: '0.65rem',
                         letterSpacing: '0.06em',

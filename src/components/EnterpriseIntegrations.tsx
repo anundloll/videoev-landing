@@ -144,8 +144,8 @@ export default function EnterpriseIntegrations() {
                   <div
                     className="rounded-xl px-3 py-2.5 mb-2"
                     style={{
-                      background: i === 4 ? 'rgba(212,175,55,0.1)' : 'rgba(255,255,255,0.04)',
-                      border: `1px solid ${i === 4 ? 'rgba(212,175,55,0.2)' : 'var(--border)'}`,
+                      background: i === 4 ? 'rgba(0,168,150,0.1)' : 'rgba(255,255,255,0.04)',
+                      border: `1px solid ${i === 4 ? 'rgba(0,168,150,0.2)' : 'var(--border)'}`,
                     }}
                   >
                     <div style={{ fontSize: '0.75rem', fontWeight: 600, color: i === 4 ? 'var(--accent)' : 'var(--text-1)', lineHeight: 1.3 }}>

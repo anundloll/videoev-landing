@@ -10,14 +10,18 @@ export default function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
               <div
-                className="w-7 h-7 rounded-md flex items-center justify-center"
-                style={{ background: 'var(--accent-green)', border: '1px solid rgba(212,175,55,0.3)' }}
+                className="w-7 h-7 rounded-lg flex items-center justify-center"
+                style={{ background: 'var(--accent-green)' }}
               >
-                <svg width="13" height="16" viewBox="0 0 13 16" fill="none">
-                  <path d="M7.5 1L1 9h5.5L5 15l7-8.5H6L7.5 1Z" fill="#D4AF37" strokeLinejoin="round"/>
+                <svg width="16" height="16" viewBox="0 0 100 100" fill="none">
+                  <rect x="8" y="22" width="84" height="56" rx="7" stroke="white" strokeWidth="6"/>
+                  <circle cx="50" cy="50" r="16" stroke="#00a896" strokeWidth="4"/>
+                  <path d="M45 43l16 7-16 7V43z" fill="#00a896"/>
                 </svg>
               </div>
-              <span className="font-semibold text-white text-base tracking-tight">VideoEV</span>
+              <span className="font-semibold text-base tracking-tight">
+                <span className="text-white">Video</span><span style={{ color: 'var(--accent)' }}>EV</span>
+              </span>
             </div>
             <p style={{ fontSize: '0.875rem', color: 'var(--text-3)', lineHeight: 1.65, maxWidth: '32ch' }}>
               The operating system for vehicle media. Self-serve VMN built on

@@ -88,9 +88,9 @@ export default function Audience() {
                     <div
                       className="text-xs px-2 py-0.5 rounded flex-shrink-0"
                       style={{
-                        background: 'rgba(212,175,55,0.08)',
+                        background: 'rgba(0,168,150,0.08)',
                         color: 'var(--accent)',
-                        border: '1px solid rgba(212,175,55,0.15)',
+                        border: '1px solid rgba(0,168,150,0.15)',
                       }}
                     >
                       {v.tier}

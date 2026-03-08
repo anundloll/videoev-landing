@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  /* British Racing Green × Gold system */
-  --accent: #D4AF37;             /* Gold — headline text accents, eyebrows, data labels */
-  --accent-dim: #B8962E;         /* Darker gold */
+  /* British Racing Green × Electric Teal system */
+  --accent: #00a896;             /* Electric Teal — interactive elements, highlights, data labels */
+  --accent-dim: #007a6e;         /* Darker teal */
   --accent-green: #004225;       /* British Racing Green — primary interactive */
-  --accent-green-hover: #005c32; /* BRG hover */
+  --accent-green-hover: #003018; /* Deep Green hover */
   --bg: #050505;
   --surface: rgba(255,255,255,0.03);
   --surface-solid: #0a0a0a;
   --surface-2: rgba(255,255,255,0.05);
   --border: rgba(255,255,255,0.08);
-  --border-gold: rgba(212,175,55,0.2);
+  --border-teal: rgba(0,168,150,0.2);
   --text-1: #ffffff;
   --text-2: #a3a3a3;
   --text-3: #525252;
@@ -102,7 +102,7 @@ h1, h2, h3, h4 {
   font-size: 0.875rem;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid rgba(212,175,55,0.2);
+  border: 1px solid rgba(0,168,150,0.2);
   transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
   display: inline-flex;
   align-items: center;

@@ -97,13 +97,13 @@ const METHOD_COLORS: Record<string, { bg: string; border: string; text: string }
 
 const BADGE_COLORS: Record<string, { bg: string; border: string; text: string }> = {
   Core: {
-    bg: 'rgba(212,175,55,0.08)',
-    border: 'rgba(212,175,55,0.2)',
+    bg: 'rgba(0,168,150,0.08)',
+    border: 'rgba(0,168,150,0.2)',
     text: 'var(--accent)',
   },
   Attribution: {
-    bg: 'rgba(0,66,37,0.12)',
-    border: 'rgba(0,66,37,0.3)',
+    bg: 'rgba(0,168,150,0.08)',
+    border: 'rgba(0,168,150,0.2)',
     text: 'var(--accent-green)',
   },
   Utility: {
@@ -130,7 +130,7 @@ export default function DevelopersPage() {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,66,37,0.12), transparent)',
+                'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,168,150,0.08), transparent)',
             }}
           />
           <div className="relative max-w-3xl mx-auto text-center">
@@ -195,7 +195,7 @@ export default function DevelopersPage() {
               <div
                 className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
                 style={{
-                  background: 'rgba(0,66,37,0.12)',
+                  background: 'rgba(0,168,150,0.08)',
                   border: '1px solid rgba(0,66,37,0.35)',
                   color: 'var(--accent-green)',
                 }}
@@ -301,7 +301,7 @@ export default function DevelopersPage() {
               <div
                 className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
                 style={{
-                  background: 'rgba(0,66,37,0.12)',
+                  background: 'rgba(0,168,150,0.08)',
                   border: '1px solid rgba(0,66,37,0.35)',
                   color: 'var(--accent-green)',
                 }}
@@ -320,7 +320,7 @@ export default function DevelopersPage() {
                   style={{
                     fontFamily: 'monospace',
                     background: 'rgba(0,66,37,0.15)',
-                    border: '1px solid rgba(0,66,37,0.3)',
+                    border: '1px solid rgba(0,168,150,0.2)',
                     color: 'var(--accent-green)',
                     padding: '0.1em 0.5em',
                     borderRadius: '4px',
@@ -476,7 +476,7 @@ export default function DevelopersPage() {
                   <code
                     style={{
                       fontFamily: 'monospace',
-                      background: 'rgba(212,175,55,0.08)',
+                      background: 'rgba(0,168,150,0.08)',
                       color: 'var(--accent)',
                       padding: '0.1em 0.4em',
                       borderRadius: '3px',
@@ -684,7 +684,7 @@ export default function DevelopersPage() {
               className="rounded-2xl p-8 text-center"
               style={{
                 background: 'rgba(0,66,37,0.08)',
-                border: '1px solid rgba(0,66,37,0.3)',
+                border: '1px solid rgba(0,168,150,0.2)',
               }}
             >
               <h3
