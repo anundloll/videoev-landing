@@ -9,6 +9,7 @@ import EnterpriseIntegrations from '@/components/EnterpriseIntegrations';
 import AMCAttribution from '@/components/AMCAttribution';
 import HowItWorks from '@/components/HowItWorks';
 import Surfaces from '@/components/Surfaces';
+import Dayparting from '@/components/Dayparting';
 import Audience from '@/components/Audience';
 import Targeting from '@/components/Targeting';
 import TechSpecs from '@/components/TechSpecs';
@@ -40,6 +41,7 @@ export default function Home() {
       <AMCAttribution />
       <HowItWorks />
       <Surfaces />
+      <Dayparting />
       <Audience />
       <Targeting />
       <TechSpecs />

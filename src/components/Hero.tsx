@@ -25,16 +25,6 @@ export default function Hero() {
       />
 
       <div className="relative max-w-5xl mx-auto px-6 text-center">
-        {/* Eyebrow */}
-        <div
-          className="inline-flex items-center gap-2 fade-up fade-up-1"
-          style={{ marginBottom: '1.75rem' }}
-        >
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--accent)' }} />
-          <span className="eyebrow">Self-Service Media Platform</span>
-          <div className="w-1.5 h-1.5 rounded-full" style={{ background: 'var(--accent)' }} />
-        </div>
-
         {/* Headline */}
         <h1
           className="fade-up fade-up-2 font-bold"
