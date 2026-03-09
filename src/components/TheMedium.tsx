@@ -76,11 +76,15 @@ export default function TheMedium() {
 
         {/* Feature cards with numbers */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {POINTS.map((p) => (
+          {POINTS.map((p, i) => (
             <div
               key={p.n}
-              className="card card-hover p-6"
-              style={{ borderColor: 'var(--border)' }}
+              className="card-hover p-6 rounded-2xl"
+              style={{
+                background: i === 0 ? 'rgba(0,66,37,0.1)' : 'rgba(255,255,255,0.03)',
+                border: i === 0 ? '1px solid rgba(0,66,37,0.3)' : '1px solid var(--border)',
+                backdropFilter: 'blur(12px)',
+              }}
             >
               <div
                 className="stat-num font-bold mb-5"
@@ -88,14 +92,14 @@ export default function TheMedium() {
                   fontSize: '0.75rem',
                   color: 'var(--accent)',
                   letterSpacing: '0.05em',
-                  opacity: 0.7,
+                  opacity: i === 0 ? 1 : 0.7,
                 }}
               >
                 {p.n}
               </div>
               <h3
                 className="font-semibold mb-2"
-                style={{ fontSize: '0.9375rem', lineHeight: 1.3 }}
+                style={{ fontSize: i === 0 ? '1.0625rem' : '0.9375rem', lineHeight: 1.3 }}
               >
                 {p.title}
               </h3>

@@ -62,7 +62,7 @@ export default function DualCTA() {
             className="font-bold"
             style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
           >
-            How to work with VideoEV
+            One network. Three ways in.
           </h2>
         </div>
 

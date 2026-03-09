@@ -47,8 +47,8 @@ export default function Hero() {
             margin: '0 auto 1.5rem',
           }}
         >
-          The Operating System{' '}
-          <span className="accent-text">for Vehicle Media.</span>
+          The Operating System for{' '}
+          <span className="accent-text">Vehicle Media.</span>
         </h1>
 
         {/* Sub */}
@@ -63,9 +63,8 @@ export default function Hero() {
             lineHeight: 1.7,
           }}
         >
-          The first self-serve VMN — brands buy impressions by vehicle segment,
-          CPOs earn passive yield on every charging session.
-          OCPP 2.0.1 · Amazon Marketing Cloud · OpenRTB 2.6.
+          The first self-serve Vehicle Media Network — brands buy impressions
+          by vehicle segment, CPOs earn passive yield on every charging session.
         </p>
 
         {/* CTAs */}
@@ -109,6 +108,30 @@ export default function Hero() {
             sales@videoev.com
           </a>
         </p>
+
+        {/* Protocol badges */}
+        <div
+          className="fade-up fade-up-4 flex items-center justify-center gap-3 flex-wrap"
+          style={{ marginTop: '2rem' }}
+        >
+          {['OCPP 2.0.1', 'OpenRTB 2.6', 'VAST 4.2', 'Amazon AMC'].map((badge) => (
+            <span
+              key={badge}
+              style={{
+                fontSize: '0.6875rem',
+                color: 'var(--text-3)',
+                fontFamily: 'monospace',
+                letterSpacing: '0.04em',
+                padding: '0.25rem 0.625rem',
+                borderRadius: '4px',
+                border: '1px solid rgba(255,255,255,0.06)',
+                background: 'rgba(255,255,255,0.02)',
+              }}
+            >
+              {badge}
+            </span>
+          ))}
+        </div>
 
         {/* Hero illustration — dual terminal panels */}
         <div
