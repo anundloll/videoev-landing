@@ -12,7 +12,6 @@ import Surfaces from '@/components/Surfaces';
 import Audience from '@/components/Audience';
 import Targeting from '@/components/Targeting';
 import TechSpecs from '@/components/TechSpecs';
-import FounderCallout from '@/components/FounderCallout';
 import DualCTA from '@/components/DualCTA';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
@@ -44,7 +43,6 @@ export default function Home() {
       <Audience />
       <Targeting />
       <TechSpecs />
-      <FounderCallout />
       <DualCTA />
       <Footer />
       <ContactModal />

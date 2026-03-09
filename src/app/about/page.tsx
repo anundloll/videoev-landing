@@ -5,7 +5,7 @@ import About from '@/components/About';
 
 export const metadata: Metadata = {
   title: 'About — VideoEV',
-  description: 'VideoEV was founded by Arvin Nundloll, former Director of Strategy & Business Development at Comcast Advertising, where he pioneered closed-loop attribution for brands including Mastercard.',
+  description: 'VideoEV is the first self-serve Vehicle Media Network — built attribution-first, from the ground up. OCPP 2.0.1 · Amazon Marketing Cloud · OpenRTB 2.6.',
 };
 
 export default function AboutPage() {
