@@ -13,8 +13,8 @@
   --border: rgba(255,255,255,0.08);
   --border-teal: rgba(0,168,150,0.2);
   --text-1: #ffffff;
-  --text-2: #a3a3a3;
-  --text-3: #717171;
+  --text-2: #c8c8c8;
+  --text-3: #909090;
 }
 
 body {
@@ -57,7 +57,7 @@ h1, h2, h3, h4 {
 .fade-up-4 { animation-delay: 0.4s; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #c8c8c8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

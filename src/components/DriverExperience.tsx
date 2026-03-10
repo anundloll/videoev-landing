@@ -62,89 +62,81 @@ export default function DriverExperience() {
               Without VideoEV
             </div>
 
-            {/* Screen mockup */}
+            {/* Screen mockup — real charger UI */}
             <div
               className="rounded-2xl overflow-hidden"
               style={{
                 aspectRatio: '16/7',
-                background: '#0a0a0a',
-                border: '1px solid rgba(255,255,255,0.08)',
-                position: 'relative',
+                background: '#0e2260',
+                border: '1px solid rgba(255,255,255,0.1)',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'flex-end',
+                position: 'relative',
               }}
             >
-              {/* Dead space label */}
+              {/* Background radial glow */}
+              <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse 70% 80% at 50% 110%, rgba(0,160,80,0.12) 0%, transparent 65%)', pointerEvents: 'none' }} />
+
+              {/* Top bar */}
               <div
                 style={{
-                  position: 'absolute',
-                  top: '50%',
-                  left: '50%',
-                  transform: 'translate(-50%, -68%)',
-                  textAlign: 'center',
-                  pointerEvents: 'none',
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                  padding: '5px 14px',
+                  background: 'rgba(0,0,0,0.25)',
+                  borderBottom: '1px solid rgba(255,255,255,0.07)',
+                  flexShrink: 0, position: 'relative', zIndex: 1,
                 }}
               >
-                <div
-                  style={{
-                    width: '56px',
-                    height: '56px',
-                    borderRadius: '50%',
-                    border: '1.5px dashed rgba(255,255,255,0.1)',
-                    margin: '0 auto 12px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5">
-                    <rect x="3" y="6" width="18" height="12" rx="2" />
-                    <path d="M7 6V4" />
-                    <path d="M17 6V4" />
-                  </svg>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <div style={{ width: '14px', height: '14px', borderRadius: '3px', background: '#3a7bd5', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <span style={{ fontSize: '0.5rem', fontWeight: 900, color: '#fff' }}>C</span>
+                  </div>
+                  <span style={{ fontSize: '0.55rem', fontWeight: 600, color: 'rgba(255,255,255,0.7)' }}>Charging</span>
                 </div>
-                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.15)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-                  Nothing here
+                <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <svg width="8" height="10" viewBox="0 0 8 10" fill="none"><path d="M4 0C2.07 0 .5 1.57.5 3.5c0 2.63 3.5 6.5 3.5 6.5s3.5-3.87 3.5-6.5C7.5 1.57 5.93 0 4 0zm0 4.75a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5z" fill="rgba(255,255,255,0.4)"/></svg>
+                  <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.5)' }}>Fairfield NB 2</span>
                 </div>
+                <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.35)', fontFamily: 'monospace' }}>1-888-557-7099</span>
               </div>
 
-              {/* Bottom charging strip */}
-              <div
-                className="px-6 py-4 flex items-center justify-between"
-                style={{ borderTop: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.025)' }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  {/* Battery icon */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <div
-                      style={{
-                        width: '28px',
-                        height: '14px',
-                        border: '1.5px solid rgba(255,255,255,0.3)',
-                        borderRadius: '3px',
-                        position: 'relative',
-                        overflow: 'hidden',
-                      }}
-                    >
-                      <div
-                        style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: 0,
-                          bottom: 0,
-                          width: '67%',
-                          background: 'rgba(255,255,255,0.3)',
-                          borderRadius: '1px',
-                        }}
-                      />
-                    </div>
-                    <span style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'rgba(255,255,255,0.5)', letterSpacing: '-0.02em' }}>67%</span>
+              {/* Main content */}
+              <div className="flex-1 px-5 py-3" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', position: 'relative', zIndex: 1 }}>
+                <div>
+                  {/* % + start label */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '5px' }}>
+                    <span style={{ fontSize: '1.5rem', fontWeight: 700, color: '#fff', letterSpacing: '-0.03em', lineHeight: 1 }}>78%</span>
+                    <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.35)', letterSpacing: '0.05em' }}>Start</span>
                   </div>
-                  <div style={{ width: '1px', height: '18px', background: 'rgba(255,255,255,0.08)' }} />
-                  <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)' }}>14 min remaining</span>
+                  {/* Green progress bar */}
+                  <div style={{ height: '20px', background: 'rgba(255,255,255,0.08)', borderRadius: '10px', overflow: 'hidden', marginBottom: '5px' }}>
+                    <div style={{ height: '100%', width: '78%', background: 'linear-gradient(90deg, #2db84a 0%, #52d46a 100%)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <span style={{ fontSize: '0.6rem', fontWeight: 700, color: '#fff' }}>78 %</span>
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.45)', textAlign: 'center' }}>
+                    Charging speed based on vehicle&apos;s estimate
+                  </div>
                 </div>
-                <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.25)', fontFamily: 'monospace' }}>150 kW</span>
+
+                {/* Stats + STOP */}
+                <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex', gap: '18px' }}>
+                    {[
+                      { label: 'Charging Time', value: '0 min' },
+                      { label: 'Active Power', value: '35 kW' },
+                      { label: 'Energy Delivered', value: '0.0202 kWh' },
+                    ].map(s => (
+                      <div key={s.label}>
+                        <div style={{ fontSize: '0.5rem', color: 'rgba(255,255,255,0.35)', marginBottom: '2px' }}>{s.label}</div>
+                        <div style={{ fontSize: '0.65rem', fontWeight: 600, color: 'rgba(255,255,255,0.8)' }}>{s.value}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ padding: '4px 12px', background: 'rgba(255,255,255,0.88)', borderRadius: '4px', fontSize: '0.55rem', fontWeight: 700, color: '#000', letterSpacing: '0.06em' }}>
+                    STOP
+                  </div>
+                </div>
               </div>
             </div>
 
