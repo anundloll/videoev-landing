@@ -3,6 +3,7 @@ import Nav from '@/components/Nav';
 import BuyingTerminal from '@/components/BuyingTerminal';
 import SearchSaturation from '@/components/SearchSaturation';
 import AMCAttribution from '@/components/AMCAttribution';
+import Surfaces from '@/components/Surfaces';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 
@@ -19,6 +20,7 @@ export default function ForBrandsPage() {
         <BuyingTerminal />
         <SearchSaturation />
         <AMCAttribution />
+        <Surfaces />
       </div>
       <Footer />
       <ContactModal />

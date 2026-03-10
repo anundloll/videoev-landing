@@ -1,6 +1,8 @@
 'use client';
 
 import Nav from '@/components/Nav';
+import TechSpecs from '@/components/TechSpecs';
+import EnterpriseIntegrations from '@/components/EnterpriseIntegrations';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 import { openModal } from '@/lib/openModal';
@@ -705,6 +707,10 @@ export default function TechnologyPage() {
             </div>
           </div>
         </section>
+
+        {/* ── Tech Specs + Enterprise Integrations ─────────────── */}
+        <TechSpecs />
+        <EnterpriseIntegrations />
 
         {/* ── CTA Strip ────────────────────────────────────────── */}
         <section style={{ padding: '3rem 1.5rem 5rem' }}>

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
+import TargetingSection from '@/components/Targeting';
+import Dayparting from '@/components/Dayparting';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 import DualCTA from '@/components/DualCTA';
@@ -466,6 +468,10 @@ export default function TargetingPage() {
           </p>
         </div>
       </section>
+
+      {/* ─── AUDIENCE BUILDER + DAYPARTING ────────────────────────────── */}
+      <TargetingSection />
+      <Dayparting />
 
       {/* ─── BOTTOM CTA ───────────────────────────────────────────────── */}
       <DualCTA />

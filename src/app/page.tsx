@@ -3,16 +3,8 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import TheMedium from '@/components/TheMedium';
-import BuyingTerminal from '@/components/BuyingTerminal';
-import RevenueTerminal from '@/components/RevenueTerminal';
-import EnterpriseIntegrations from '@/components/EnterpriseIntegrations';
-import AMCAttribution from '@/components/AMCAttribution';
-import HowItWorks from '@/components/HowItWorks';
-import Surfaces from '@/components/Surfaces';
-import Dayparting from '@/components/Dayparting';
 import Audience from '@/components/Audience';
-import Targeting from '@/components/Targeting';
-import TechSpecs from '@/components/TechSpecs';
+import HowItWorks from '@/components/HowItWorks';
 import DualCTA from '@/components/DualCTA';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
@@ -35,16 +27,8 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <TheMedium />
-      <BuyingTerminal />
-      <RevenueTerminal />
-      <EnterpriseIntegrations />
-      <AMCAttribution />
-      <HowItWorks />
-      <Surfaces />
-      <Dayparting />
       <Audience />
-      <Targeting />
-      <TechSpecs />
+      <HowItWorks />
       <DualCTA />
       <Footer />
       <ContactModal />

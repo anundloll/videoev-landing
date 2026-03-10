@@ -54,11 +54,11 @@ export default function Footer() {
             <div className="eyebrow mb-4" style={{ color: 'var(--text-3)' }}>Platform</div>
             <ul className="flex flex-col gap-3">
               {[
-                { label: 'Inventory Search', href: '/#advertisers' },
-                { label: 'For Brands', href: '/#advertisers' },
-                { label: 'For CPOs', href: '/#cpos' },
-                { label: 'Tech Stack', href: '/#tech' },
+                { label: 'For Brands', href: '/for-brands' },
+                { label: 'For CPOs', href: '/network' },
+                { label: 'Data & Targeting', href: '/targeting' },
                 { label: 'Identity Graph', href: '/identity' },
+                { label: 'How It Works', href: '/how-it-works' },
                 { label: 'About', href: '/about' },
                 { label: 'Live Demo', href: 'https://demo.videoev.com' },
               ].map((l) => (
