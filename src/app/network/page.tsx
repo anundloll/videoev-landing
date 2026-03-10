@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import RevenueTerminal from '@/components/RevenueTerminal';
+import ROICalculator from '@/components/ROICalculator';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 
@@ -15,6 +16,7 @@ export default function NetworkPage() {
       <Nav />
       <div style={{ paddingTop: '4rem' }}>
         <RevenueTerminal />
+        <ROICalculator />
       </div>
       <Footer />
       <ContactModal />

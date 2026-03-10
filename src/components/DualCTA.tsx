@@ -54,13 +54,13 @@ const CARDS = [
 
 export default function DualCTA() {
   return (
-    <section className="py-24" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
+    <section className="py-16" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center max-w-xl mx-auto mb-14">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Work with VideoEV</p>
+        <div className="text-center max-w-xl mx-auto mb-10">
+          <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Work with VideoEV</p>
           <h2
             className="font-bold"
-            style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.015em' }}
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', lineHeight: 1.15, letterSpacing: '-0.015em' }}
           >
             One network. Three ways in.
           </h2>
