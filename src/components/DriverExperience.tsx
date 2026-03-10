@@ -21,21 +21,21 @@ const RELIABILITY_ITEMS = [
 export default function DriverExperience() {
   return (
     <section
-      className="py-24"
+      className="pt-16 pb-24"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Driver Experience</p>
+        <div className="max-w-2xl mb-10">
+          <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Driver Experience</p>
           <h2
             className="font-bold"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em', marginBottom: '1.125rem' }}
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em', marginBottom: '1rem' }}
           >
             A 20-minute wait becomes something worth staying for.
           </h2>
-          <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
+          <p style={{ color: 'var(--text-2)', fontSize: '0.9375rem', lineHeight: 1.6, fontWeight: 300 }}>
             Most drivers plug in and stare at a progress bar. That screen sits empty for the entire session.
             VideoEV fills it with content that&apos;s actually relevant to the moment — without changing anything about the charge.
           </p>
@@ -337,7 +337,7 @@ export default function DriverExperience() {
 
         {/* Callout line */}
         <div
-          className="rounded-xl px-6 py-4 mb-14"
+          className="rounded-xl px-6 py-4 mb-10"
           style={{
             background: 'rgba(0,66,37,0.07)',
             border: '1px solid rgba(0,66,37,0.2)',
@@ -362,17 +362,16 @@ export default function DriverExperience() {
         </div>
 
         {/* Reliability pillars */}
-        <div className="mb-4">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Reliability First</p>
+        <div className="mb-6">
+          <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Reliability First</p>
           <h3
             className="font-bold"
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', lineHeight: 1.2, letterSpacing: '-0.015em', marginBottom: '0.75rem', maxWidth: '32rem' }}
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', lineHeight: 1.2, letterSpacing: '-0.015em', marginBottom: '0.625rem', maxWidth: '32rem' }}
           >
             Your core business doesn&apos;t change.
           </h3>
-          <p style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.65, fontWeight: 300, maxWidth: '36rem', marginBottom: '2.5rem' }}>
-            Reliable charging is what makes or breaks a CPO. We&apos;re not in the business of
-            compromising that. Here&apos;s exactly what we do — and don&apos;t — touch.
+          <p style={{ color: 'var(--text-2)', fontSize: '0.9rem', lineHeight: 1.6, fontWeight: 300, maxWidth: '36rem' }}>
+            Reliable charging is what makes or breaks a CPO. Here&apos;s exactly what we do — and don&apos;t — touch.
           </p>
         </div>
 
@@ -380,26 +379,28 @@ export default function DriverExperience() {
           {RELIABILITY_ITEMS.map((item) => (
             <div
               key={item.n}
-              className="rounded-2xl px-6 py-6"
+              className="rounded-2xl px-5 py-5"
               style={{
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid var(--border)',
               }}
             >
-              <div
-                className="w-8 h-8 rounded-full flex items-center justify-center mb-5"
-                style={{
-                  background: 'rgba(0,66,37,0.2)',
-                  border: '1px solid rgba(0,66,37,0.4)',
-                  fontSize: '0.6rem',
-                  color: 'var(--accent)',
-                  fontWeight: 700,
-                  letterSpacing: '0.05em',
-                }}
-              >
-                {item.n}
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0"
+                  style={{
+                    background: 'rgba(0,66,37,0.2)',
+                    border: '1px solid rgba(0,66,37,0.4)',
+                    fontSize: '0.6rem',
+                    color: 'var(--accent)',
+                    fontWeight: 700,
+                    letterSpacing: '0.05em',
+                  }}
+                >
+                  {item.n}
+                </div>
+                <div className="font-semibold" style={{ fontSize: '0.9375rem' }}>{item.title}</div>
               </div>
-              <div className="font-semibold mb-2" style={{ fontSize: '0.9375rem' }}>{item.title}</div>
               <p style={{ fontSize: '0.8375rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 300 }}>{item.body}</p>
             </div>
           ))}

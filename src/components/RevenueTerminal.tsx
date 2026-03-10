@@ -54,21 +54,21 @@ export default function RevenueTerminal() {
   return (
     <section
       id="cpos"
-      className="py-24"
+      className="pt-16 pb-24"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-14">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>For CPOs &amp; Operators</p>
+        <div className="max-w-2xl mb-10">
+          <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>For CPOs &amp; Operators</p>
           <h2
             className="font-bold"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em', marginBottom: '1.125rem' }}
+            style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em', marginBottom: '1rem' }}
           >
             Your stalls earn while they charge.
           </h2>
-          <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
+          <p style={{ color: 'var(--text-2)', fontSize: '0.9375rem', lineHeight: 1.6, fontWeight: 300 }}>
             141 million sessions ran through U.S. fast chargers last year — up 30%. Every one was 20+ minutes
             of captive attention. We give you a cut of that, without changing a single thing about how your
             network operates.
@@ -161,7 +161,7 @@ export default function RevenueTerminal() {
               className="px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
               style={{ borderTop: '1px solid var(--border)', background: 'rgba(255,255,255,0.015)' }}
             >
-              <p style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontFamily: 'monospace', letterSpacing: '0.02em' }}>
+              <p style={{ fontSize: '0.7rem', color: 'var(--text-3)', fontFamily: 'monospace', letterSpacing: '0.02em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', minWidth: 0, flex: '1 1 0' }}>
                 {stalls} stalls × {T} cars × {L} ads × 30 days × ${CPM} CPM ÷ 1,000
               </p>
               <button
