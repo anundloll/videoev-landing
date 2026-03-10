@@ -58,6 +58,8 @@ export default function Footer() {
                 { label: 'For CPOs', href: '/network' },
                 { label: 'Data & Targeting', href: '/targeting' },
                 { label: 'Identity Graph', href: '/identity' },
+                { label: 'Technology', href: '/technology' },
+                { label: 'Developers', href: '/developers' },
                 { label: 'How It Works', href: '/how-it-works' },
                 { label: 'About', href: '/about' },
                 { label: 'Live Demo', href: 'https://demo.videoev.com' },
