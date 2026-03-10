@@ -172,155 +172,138 @@ export default function DriverExperience() {
               With VideoEV
             </div>
 
-            {/* Screen mockup */}
+            {/* Screen mockup — video ad playing */}
             <div
               className="rounded-2xl overflow-hidden"
               style={{
                 aspectRatio: '16/7',
-                background: '#0d1a12',
-                border: '1px solid rgba(0,66,37,0.4)',
-                position: 'relative',
+                background: '#0b0f1a',
+                border: '1px solid rgba(70,50,150,0.35)',
                 display: 'flex',
                 flexDirection: 'column',
               }}
             >
-              {/* Content zone */}
+              {/* VideoEV status bar */}
               <div
-                className="flex-1 px-5 pt-4 pb-3"
-                style={{ display: 'flex', gap: '10px', alignItems: 'stretch', minHeight: 0 }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '5px 14px',
+                  background: 'linear-gradient(90deg, rgba(40,20,100,0.95) 0%, rgba(25,15,70,0.95) 100%)',
+                  borderBottom: '1px solid rgba(255,255,255,0.05)',
+                  flexShrink: 0,
+                }}
               >
-                {/* Main content card */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                  <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 5px #22c55e' }} />
+                  <span style={{ fontSize: '0.6rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)', letterSpacing: '0.03em' }}>VideoEV</span>
+                  <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)', letterSpacing: '0.05em' }}>· Live</span>
+                </div>
+                <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.35)' }}>Chicago — Magnificent Mile</span>
+                <span style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.45)', fontFamily: 'monospace' }}>0:24</span>
+              </div>
+
+              {/* Full-bleed video area */}
+              <div className="flex-1 relative" style={{ overflow: 'hidden', minHeight: 0 }}>
+                {/* Video scene — cinematic gradient simulating outdoor/road */}
                 <div
-                  className="flex-1 rounded-xl px-4 py-3"
                   style={{
-                    background: 'rgba(0,66,37,0.12)',
-                    border: '1px solid rgba(0,66,37,0.25)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-between',
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(160deg, #1b3a5c 0%, #0d2440 30%, #162b45 55%, #0b1e30 100%)',
                   }}
-                >
-                  <div>
-                    <div
-                      style={{
-                        fontSize: '0.55rem',
-                        fontWeight: 700,
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: 'var(--accent)',
-                        marginBottom: '4px',
-                      }}
-                    >
-                      Nearby · 0.2 mi
-                    </div>
-                    <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'rgba(255,255,255,0.85)', lineHeight: 1.3 }}>
-                      Blue Bottle Coffee
-                    </div>
-                    <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.4)', marginTop: '2px' }}>
-                      20% off with EV receipt today
-                    </div>
+                />
+                {/* Atmosphere bloom */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'radial-gradient(ellipse 60% 50% at 70% 35%, rgba(80,150,220,0.18) 0%, transparent 65%)',
+                  }}
+                />
+                {/* Ground vignette */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0, left: 0, right: 0,
+                    height: '45%',
+                    background: 'linear-gradient(180deg, transparent 0%, rgba(5,12,22,0.75) 100%)',
+                  }}
+                />
+
+                {/* Ad copy — bottom left */}
+                <div style={{ position: 'absolute', left: '14px', bottom: '12px' }}>
+                  <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.07em', textTransform: 'uppercase', marginBottom: '3px' }}>
+                    geico.com &nbsp;·&nbsp; local agent
                   </div>
-                  <div
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      fontSize: '0.6rem',
-                      color: 'var(--accent)',
-                      fontWeight: 600,
-                    }}
-                  >
-                    Get directions →
+                  <div style={{ fontSize: '1rem', fontWeight: 800, color: '#fff', lineHeight: 1, letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>
+                    Get more with
+                  </div>
+                  <div style={{ fontSize: '1.35rem', fontWeight: 900, color: '#fff', lineHeight: 1.05, letterSpacing: '-0.03em', textShadow: '0 2px 10px rgba(0,0,0,0.9)' }}>
+                    GEICO
                   </div>
                 </div>
 
-                {/* Side tiles */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', width: '30%', minWidth: 0 }}>
-                  {/* Weather */}
-                  <div
-                    className="rounded-xl px-3 py-2"
-                    style={{
-                      flex: 1,
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.07)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'rgba(255,255,255,0.7)', letterSpacing: '-0.01em' }}>
-                      72° ☀
-                    </div>
-                    <div style={{ fontSize: '0.55rem', color: 'rgba(255,255,255,0.3)', marginTop: '1px' }}>San Francisco</div>
-                  </div>
-                  {/* Ad tile */}
-                  <div
-                    className="rounded-xl px-3 py-2"
-                    style={{
-                      flex: 1,
-                      background: 'rgba(234,179,8,0.07)',
-                      border: '1px solid rgba(234,179,8,0.15)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <div style={{ fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(234,179,8,0.7)', marginBottom: '2px' }}>
-                      Sponsored
-                    </div>
-                    <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.3 }}>
-                      New Rivian R2 · Starting $45k
-                    </div>
-                  </div>
+                {/* Advertiser badge — top right */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '8px',
+                    right: '8px',
+                    background: '#f5c518',
+                    borderRadius: '4px',
+                    padding: '3px 8px',
+                    fontSize: '0.65rem',
+                    fontWeight: 900,
+                    color: '#000',
+                    letterSpacing: '0.03em',
+                  }}
+                >
+                  GEICO
                 </div>
+              </div>
+
+              {/* Ad progress bar */}
+              <div style={{ height: '3px', background: 'rgba(255,255,255,0.07)', flexShrink: 0, position: 'relative' }}>
+                <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '93%', background: '#f5c518' }} />
               </div>
 
               {/* Bottom charging strip */}
               <div
-                className="px-6 py-4 flex items-center justify-between"
-                style={{ borderTop: '1px solid rgba(0,66,37,0.25)', background: 'rgba(0,66,37,0.06)' }}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '7px 14px',
+                  background: 'rgba(0,0,0,0.55)',
+                  borderTop: '1px solid rgba(255,255,255,0.05)',
+                  flexShrink: 0,
+                }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
                     <div
                       style={{
-                        width: '28px',
-                        height: '14px',
+                        width: '26px', height: '13px',
                         border: '1.5px solid rgba(0,200,100,0.5)',
-                        borderRadius: '3px',
-                        position: 'relative',
-                        overflow: 'hidden',
+                        borderRadius: '3px', position: 'relative', overflow: 'hidden',
                       }}
                     >
-                      <div
-                        style={{
-                          position: 'absolute',
-                          left: 0,
-                          top: 0,
-                          bottom: 0,
-                          width: '67%',
-                          background: 'rgba(0,200,100,0.5)',
-                          borderRadius: '1px',
-                        }}
-                      />
+                      <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: '67%', background: 'rgba(0,200,100,0.5)', borderRadius: '1px' }} />
                     </div>
-                    <span style={{ fontSize: '0.9375rem', fontWeight: 700, color: 'rgba(0,220,120,0.8)', letterSpacing: '-0.02em' }}>67%</span>
+                    <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'rgba(0,220,120,0.85)', letterSpacing: '-0.02em' }}>67%</span>
                   </div>
-                  <div style={{ width: '1px', height: '18px', background: 'rgba(255,255,255,0.08)' }} />
-                  <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>14 min remaining</span>
+                  <div style={{ width: '1px', height: '16px', background: 'rgba(255,255,255,0.07)' }} />
+                  <span style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.35)' }}>14 min remaining</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.3)', fontFamily: 'monospace' }}>150 kW</span>
+                  <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.22)', fontFamily: 'monospace' }}>28s / 30s</span>
+                  <span style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.2)', fontFamily: 'monospace' }}>150 kW</span>
                   <div
                     style={{
-                      fontSize: '0.55rem',
-                      fontWeight: 700,
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      color: 'rgba(0,200,100,0.5)',
-                      border: '1px solid rgba(0,200,100,0.2)',
-                      borderRadius: '4px',
-                      padding: '2px 5px',
+                      fontSize: '0.5rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
+                      color: 'rgba(0,200,100,0.5)', border: '1px solid rgba(0,200,100,0.2)', borderRadius: '3px', padding: '1px 4px',
                     }}
                   >
                     VideoEV
@@ -330,7 +313,7 @@ export default function DriverExperience() {
             </div>
 
             <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', marginTop: '0.75rem', lineHeight: 1.5 }}>
-              Same session. Same charge speed. The screen just does something useful now — for the driver and for you.
+              Same session. Same charge speed. A 30-second video runs. You earn CPM.
             </p>
           </div>
         </div>
