@@ -16,7 +16,7 @@ const ADVERTISER_STEPS = [
     title: 'Define your segment',
     body: 'Use the Audience Builder to select vehicle make, model, and MSRP tier. Layer in daypart windows, station venue type, and geo. Every filter maps to a confirmed OCPP signal — not a panel, not a survey, not income modeling.',
     stat: { value: '248k', label: 'verified charging profiles' },
-    tags: ['VIN-confirmed make / model', 'MSRP tier ($40k · $80k · $120k+)', 'Daypart: commute, shoulder, road-trip', 'Venue: luxury retail, grocery, highway'],
+    tags: ['Session-resolved make / model', 'MSRP tier ($40k · $80k · $120k+)', 'Daypart: commute, shoulder, road-trip', 'Venue: luxury retail, grocery, highway'],
   },
   {
     num: '02',
@@ -77,7 +77,7 @@ const CPO_STEPS = [
 
 const SESSION_SEQUENCE = [
   { ts: '00:00.000', event: 'Driver plugs in', detail: 'OCPP StartTransaction fires to network CMS' },
-  { ts: '00:00.018', event: 'VIN confirmed', detail: '2024 Porsche Taycan Turbo S · MSRP $185k' },
+  { ts: '00:00.018', event: 'Identity resolved', detail: '2024 Porsche Taycan Turbo S · MSRP $185k' },
   { ts: '00:00.021', event: 'Session context assembled', detail: 'SoC 9% · Weekday 7:32am · Westfield Mall · DCFC' },
   { ts: '00:00.067', event: 'Bid request dispatched', detail: 'OpenRTB 2.6 · floor $18.00 · est. dwell 44 min' },
   { ts: '00:00.142', event: 'Winning bid returned', detail: '$28.40 · creative validated · VAST 4.2 payload' },
@@ -206,7 +206,7 @@ export default function HowItWorksPage() {
               </h3>
               <ul className="flex flex-col gap-3">
                 {[
-                  'Target by VIN-confirmed vehicle segment',
+                  'Target by session-resolved vehicle segment',
                   'Set CPM, daypart, venue type, and geo',
                   'Creative serves across kiosk, mobile, in-car',
                   'Closed-loop attribution post-session',

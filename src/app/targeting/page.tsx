@@ -7,7 +7,7 @@ import DualCTA from '@/components/DualCTA';
 export const metadata: Metadata = {
   title: 'Audience & Data — VideoEV',
   description:
-    'VIN-confirmed vehicle identity, live OCPP telemetry, and venue-level location context. No modeled proxies. No cookie dependency. Deterministic signals from the charger.',
+    'Session-resolved vehicle identity, live OCPP telemetry, and venue-level location context. No modeled proxies. No cookie dependency. Deterministic signals from the charger.',
 };
 
 const SIGNAL_LAYERS = [
@@ -15,9 +15,9 @@ const SIGNAL_LAYERS = [
     num: '01',
     label: 'Vehicle Identity',
     headline: 'The car is the credential.',
-    body: `At OCPP session initiation, the vehicle authenticates against the charger. We capture make, model, year, and trim — not from a device ID or a survey panel, from the hardware handshake itself. MSRP is public record. A $145,000 Porsche Taycan Turbo S driver doesn't need income modeling. The car already told you.`,
+    body: `At OCPP session initiation, the charger receives an EVCCID — an encrypted hardware identifier, never Make, Model, or VIN. VideoEV's identity resolution layer matches it against the Vehicle Identity Graph: a cross-reference of hardware identifiers, CPO session histories, and OEM data. Make, Model, Year, and Trim are resolved deterministically. MSRP is public record. A $145,000 Porsche Taycan Turbo S driver doesn't need income modeling — you already know what they drive.`,
     signals: [
-      { name: 'Make · Model · Year · Trim', note: 'VIN-confirmed at session start' },
+      { name: 'Make · Model · Year · Trim', note: 'Session-resolved via identity graph' },
       { name: 'MSRP range', note: 'Public record, not inferred' },
       { name: 'Brand tier', note: 'Ultra-luxury / Premium / Aspirational' },
       { name: 'Income proxy', note: 'Derived from vehicle purchase price' },
@@ -57,7 +57,7 @@ const SIGNAL_LAYERS = [
 const COMPARISON = [
   {
     signal: 'Identity source',
-    videoev: 'VIN / OCPP handshake',
+    videoev: 'EVCCID / Identity Graph',
     cookies: 'Browser / device ID',
     dooh: 'Panel + credit bureau',
   },
@@ -139,7 +139,7 @@ export default function TargetingPage() {
           </p>
 
           <div className="flex items-center justify-center gap-3 flex-wrap">
-            {['OCPP 2.0.1', 'VIN-confirmed', 'Zero cookie dependency', 'Live telemetry'].map(
+            {['OCPP 2.0.1', 'Session-resolved', 'Zero cookie dependency', 'Live telemetry'].map(
               (badge) => (
                 <span
                   key={badge}
@@ -195,8 +195,9 @@ export default function TargetingPage() {
               </p>
               <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
                 VideoEV data originates at the OCPP layer — the protocol that governs the
-                physical connection between an EV and a charger. The vehicle tells the charger
-                exactly what it is. We read that signal and pass it upstream to every bid request.
+                physical connection between an EV and a charger. What crosses the wire is an
+                encrypted hardware identifier, not a vehicle profile. VideoEV resolves it. The
+                match goes upstream to every bid request.
               </p>
             </div>
 
@@ -217,7 +218,7 @@ export default function TargetingPage() {
                   label: 'VideoEV — direct from OCPP',
                   bad: false,
                   items: [
-                    'VIN-confirmed make, model, year, trim',
+                    'Session-resolved make, model, year, trim',
                     'MSRP-derived income (public, hard data)',
                     'Dwell: live State of Charge from the charger',
                     'Location: specific station, venue type, ZIP+4',

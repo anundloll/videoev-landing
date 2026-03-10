@@ -34,8 +34,8 @@ export default function BuyingTerminal() {
             Buy by vehicle. Not by cookie.
           </h2>
           <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
-            VIN-confirmed audience data from OCPP. Every segment is real — not
-            modeled, not inferred. The vehicle is the qualifying signal.
+            Session-resolved audience data from OCPP. The segment you&apos;re buying
+            maps to a real vehicle on a real charger — not a modeled estimate.
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export default function BuyingTerminal() {
 
             {/* Footer */}
             <div className="px-5 py-3 flex items-center justify-between" style={{ borderTop: '1px solid var(--border)' }}>
-              <span style={{ fontSize: '0.7rem', color: 'var(--text-3)' }}>248k total verified profiles · VIN-confirmed</span>
+              <span style={{ fontSize: '0.7rem', color: 'var(--text-3)' }}>248k session-resolved vehicle profiles</span>
               <button
                 onClick={() => openModal('advertiser')}
                 className="btn-primary"

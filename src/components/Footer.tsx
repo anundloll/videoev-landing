@@ -58,6 +58,7 @@ export default function Footer() {
                 { label: 'For Brands', href: '/#advertisers' },
                 { label: 'For CPOs', href: '/#cpos' },
                 { label: 'Tech Stack', href: '/#tech' },
+                { label: 'Identity Graph', href: '/identity' },
                 { label: 'About', href: '/about' },
                 { label: 'Live Demo', href: 'https://demo.videoev.com' },
               ].map((l) => (

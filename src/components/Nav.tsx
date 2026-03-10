@@ -57,6 +57,13 @@ export default function Nav() {
             For CPOs
           </a>
           <Link
+            href="/identity"
+            style={{ color: 'var(--text-2)', fontSize: '0.875rem' }}
+            className="hover:text-white transition-colors"
+          >
+            Identity Graph
+          </Link>
+          <Link
             href="/about"
             style={{ color: 'var(--text-2)', fontSize: '0.875rem' }}
             className="hover:text-white transition-colors"
@@ -101,6 +108,7 @@ export default function Nav() {
           <a href="/#advertisers" style={{ color: 'var(--text-2)', paddingTop: '1rem' }} onClick={() => setOpen(false)}>Inventory Search</a>
           <a href="/#advertisers" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>For Brands</a>
           <a href="/#cpos" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>For CPOs</a>
+          <Link href="/identity" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Identity Graph</Link>
           <Link href="/about" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>About</Link>
           <a href="mailto:sales@videoev.com" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Contact Us</a>
           <div className="pt-2">

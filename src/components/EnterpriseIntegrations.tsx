@@ -2,7 +2,7 @@ const INTEGRATIONS = [
   {
     name: 'OCPP 2.0.1',
     category: 'Hardware Protocol',
-    description: 'Bi-directional vehicle data. SoC, VIN, session duration — direct from the charger. No API middlemen.',
+    description: 'EVCCID, SoC, and session duration — direct from the charger. No API middlemen. The EVCCID feeds our Vehicle Identity Graph.',
     tag: 'Hardware Layer',
     accent: true,
   },

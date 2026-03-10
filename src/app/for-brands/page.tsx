@@ -8,7 +8,7 @@ import ContactModal from '@/components/ContactModal';
 
 export const metadata: Metadata = {
   title: 'For Brands — VideoEV',
-  description: 'Escape Amazon Search saturation. VideoEV delivers premium EV charging video inventory with VIN-confirmed audience targeting and closed-loop AMC attribution.',
+  description: 'Escape Amazon Search saturation. VideoEV delivers premium EV charging video inventory with session-resolved audience targeting and closed-loop AMC attribution.',
 };
 
 export default function ForBrandsPage() {

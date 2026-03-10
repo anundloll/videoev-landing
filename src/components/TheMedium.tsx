@@ -41,7 +41,7 @@ const COMPARE = [
   {
     medium: 'VideoEV (VMN)',
     dwell: '20–40 Mins',
-    data: 'Direct Vehicle (OCPP)',
+    data: 'OCPP Identity Resolution',
     measurement: 'Amazon Purchase Data',
     yield: 'Programmatic High-CPM',
     featured: true,

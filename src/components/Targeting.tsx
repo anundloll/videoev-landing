@@ -25,7 +25,7 @@ export default function Targeting() {
                     label: 'WHO · Vehicle Identity',
                     active: true,
                     chips: ['Tesla Model S', 'BMW iX', 'Porsche Taycan'],
-                    badge: 'VIN-confirmed',
+                    badge: 'Session-resolved',
                   },
                   {
                     label: 'WHO · Income Proxy',
@@ -111,19 +111,19 @@ export default function Targeting() {
                 marginBottom: '1.25rem',
               }}
             >
-              VIN-level signals. No guesswork.
+              Hardware-derived vehicle identity. Deterministic, not modeled.
             </h2>
             <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, marginBottom: '2rem', fontWeight: 300 }}>
-              VideoEV&apos;s Audience Builder combines live vehicle telemetry with MSRP-derived
-              income signals and station context. The data comes from the charger — not a
-              modeled proxy.
+              VideoEV&apos;s Audience Builder resolves OCPP session identifiers to vehicle profiles —
+              Make, Model, MSRP proxy — through our Vehicle Identity Graph. The signal comes
+              from the charging hardware, not a panel or a survey.
             </p>
 
             <div className="flex flex-col gap-5">
               {[
                 {
                   title: 'Two signal layers',
-                  body: 'WHO signals (vehicle identity, income, charging behaviour) combined with WHERE signals (screen type, network, station environment).',
+                  body: 'WHO signals (session-resolved vehicle identity, MSRP-derived income, charging behaviour) combined with WHERE signals (screen type, network, station environment).',
                 },
                 {
                   title: 'Live reach & CPM estimates',

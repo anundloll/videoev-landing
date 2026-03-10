@@ -2,8 +2,8 @@ const STEPS = [
   {
     step: '01',
     title: 'Build your audience',
-    body: 'Use the VideoEV Audience Builder to target by vehicle make and model, MSRP tier, charging behaviour, station type, and location. VIN-confirmed data — no panels, no inferred proxies.',
-    detail: '248k verified charging profiles',
+    body: 'Use the VideoEV Audience Builder to target by vehicle make and model, MSRP tier, charging behaviour, station type, and location. Session-resolved identity — OCPP identifiers matched to vehicle profiles through our Vehicle Identity Graph.',
+    detail: '248k session-resolved vehicle profiles',
   },
   {
     step: '02',

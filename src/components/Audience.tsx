@@ -8,7 +8,7 @@ const VEHICLES = [
 ];
 
 const SIGNALS = [
-  { label: 'VIN-confirmed vehicle identity', icon: '🔑', desc: 'Make, model, year — not self-reported' },
+  { label: 'Session-resolved vehicle identity', icon: '🔑', desc: 'Make, model, year — OCPP-matched, not self-reported' },
   { label: 'MSRP-derived income proxy', icon: '💰', desc: 'No credit data — inferred from purchase price' },
   { label: 'Live charging telemetry', icon: '⚡', desc: 'Session frequency, station type, duration' },
   { label: 'Station environment', icon: '📍', desc: 'Airport, hotel, retail, residential' },
@@ -117,7 +117,7 @@ export default function Audience() {
                   className="text-xs font-semibold"
                   style={{ color: 'var(--accent)' }}
                 >
-                  VIN-confirmed ✓
+                  Session-resolved ✓
                 </span>
               </div>
             </div>

@@ -6,9 +6,9 @@ const CARDS = [
     id: 'advertiser',
     audience: 'Brands & Agencies',
     headline: 'Reach EV drivers that buy',
-    body: 'Build targeted campaigns using VIN-confirmed audience data. Set your CPM, choose your surfaces, and track every outcome in real time. Minimum buys start at $5k.',
+    body: 'Build targeted campaigns against session-resolved vehicle data. Set your CPM, choose your surfaces, and track every outcome in real time. Minimum buys start at $5k.',
     features: [
-      'VIN-confirmed audience targeting',
+      'Session-resolved audience targeting',
       'Creative across kiosk, mobile & in-car',
       'Real-time attribution dashboard',
       'Brand safety — 100% contextual',

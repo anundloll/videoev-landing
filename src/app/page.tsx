@@ -19,10 +19,10 @@ import ContactModal from '@/components/ContactModal';
 
 export const metadata: Metadata = {
   title: 'VideoEV — The Operating System for Vehicle Media',
-  description: 'VideoEV is the first self-serve Vehicle Media Network. Brands buy by vehicle segment, CPOs earn passive yield. OCPP 2.0.1 · Amazon Marketing Cloud · OpenRTB 2.6.',
+  description: 'VideoEV is the first Vehicle Media Network powered by a Vehicle Identity Graph. OCPP session identifiers resolved to Make, Model, and MSRP proxy. Brands buy by vehicle segment. CPOs earn passive yield.',
   openGraph: {
     title: 'VideoEV — The Operating System for Vehicle Media',
-    description: 'Self-serve VMN. Brands buy impressions by vehicle segment. CPOs earn passive yield on every charging session.',
+    description: 'The first VMN with a Vehicle Identity Graph. OCPP identifiers resolved to verified vehicle profiles. Brands buy by segment. CPOs earn passive yield.',
     url: 'https://videoev.com',
     siteName: 'VideoEV',
   },
