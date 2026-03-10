@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Nav from '@/components/Nav';
 import RevenueTerminal from '@/components/RevenueTerminal';
-import ROICalculator from '@/components/ROICalculator';
+import DriverExperience from '@/components/DriverExperience';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 
@@ -16,7 +16,7 @@ export default function NetworkPage() {
       <Nav />
       <div style={{ paddingTop: '4rem' }}>
         <RevenueTerminal />
-        <ROICalculator />
+        <DriverExperience />
       </div>
       <Footer />
       <ContactModal />

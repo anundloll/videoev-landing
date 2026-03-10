@@ -15,10 +15,33 @@ function fmt(n: number): string {
   return `$${n.toFixed(0)}`;
 }
 
-const STEPS = [
-  { n: '01', title: 'Connect via OCPP 2.0.1', body: 'Your chargers speak OCPP already. We connect in under 48 hours — no hardware swap, no CapEx.' },
-  { n: '02', title: 'We handle the media layer', body: 'VideoEV places ads from our programmatic marketplace. You never touch a campaign.' },
-  { n: '03', title: 'Monthly passive yield', body: 'Revenue deposited monthly. Real-time analytics in your dashboard. You own the charger — we run the media.' },
+const BENEFITS = [
+  {
+    n: '01',
+    title: 'Your hardware stays untouched',
+    body: 'No firmware updates. No physical install. We connect through OCPP — the same protocol your CSMS already speaks. If anything breaks, that\'s our problem.',
+  },
+  {
+    n: '02',
+    title: 'We run the entire media layer',
+    body: 'Advertiser sourcing, campaign management, revenue reporting. Your ops team doesn\'t touch any of it. Monthly payouts deposit automatically. Check the dashboard when you feel like it.',
+  },
+  {
+    n: '03',
+    title: 'Every new stall earns on day one',
+    body: 'Add a site, connect it, done. Revenue scales with your footprint automatically — no new contracts, no setup calls per location, no renegotiations.',
+  },
+  {
+    n: '04',
+    title: 'Drivers don\'t hate it',
+    body: 'Content is timed to active charging sessions, not crammed between them. Relevant to the moment. We\'ve had operators tell us drivers ask about the screen — not complain about it.',
+  },
+];
+
+const MARKET_STATS = [
+  { value: '141M', label: 'U.S. fast charging sessions in 2025', source: 'Paren' },
+  { value: '+30%', label: 'Year-over-year demand growth', source: 'Paren' },
+  { value: '20+ min', label: 'Average fast charging session', source: 'Industry avg' },
 ];
 
 export default function RevenueTerminal() {
@@ -38,7 +61,7 @@ export default function RevenueTerminal() {
 
         {/* Header */}
         <div className="max-w-2xl mb-14">
-          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>For CPOs</p>
+          <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>For CPOs &amp; Operators</p>
           <h2
             className="font-bold"
             style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.12, letterSpacing: '-0.015em', marginBottom: '1.125rem' }}
@@ -46,8 +69,9 @@ export default function RevenueTerminal() {
             Your stalls earn while they charge.
           </h2>
           <p style={{ color: 'var(--text-2)', fontSize: '1.0625rem', lineHeight: 1.65, fontWeight: 300 }}>
-            Turn idle dwell time into recurring media revenue. No hardware. No
-            ad operations. Pure passive yield from infrastructure you already own.
+            141 million sessions ran through U.S. fast chargers last year — up 30%. Every one was 20+ minutes
+            of captive attention. We give you a cut of that, without changing a single thing about how your
+            network operates.
           </p>
         </div>
 
@@ -150,13 +174,10 @@ export default function RevenueTerminal() {
             </div>
           </div>
 
-          {/* RIGHT — how it works */}
+          {/* RIGHT — operator benefits */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            {STEPS.map((s) => (
-              <div
-                key={s.n}
-                className="flex gap-4"
-              >
+            {BENEFITS.map((b) => (
+              <div key={b.n} className="flex gap-4">
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                   style={{
@@ -168,16 +189,16 @@ export default function RevenueTerminal() {
                     letterSpacing: '0.05em',
                   }}
                 >
-                  {s.n}
+                  {b.n}
                 </div>
                 <div>
-                  <div className="font-semibold mb-1.5" style={{ fontSize: '0.9375rem' }}>{s.title}</div>
-                  <p style={{ fontSize: '0.8375rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 300 }}>{s.body}</p>
+                  <div className="font-semibold mb-1.5" style={{ fontSize: '0.9375rem' }}>{b.title}</div>
+                  <p style={{ fontSize: '0.8375rem', color: 'var(--text-2)', lineHeight: 1.65, fontWeight: 300 }}>{b.body}</p>
                 </div>
               </div>
             ))}
 
-            {/* OCPP badge */}
+            {/* Hardware compatibility badge */}
             <div
               className="rounded-xl px-4 py-3 mt-2"
               style={{ background: 'rgba(0,66,37,0.08)', border: '1px solid rgba(0,66,37,0.3)' }}
@@ -186,11 +207,38 @@ export default function RevenueTerminal() {
                 Hardware-Agnostic
               </div>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-2)', lineHeight: 1.6, fontWeight: 300 }}>
-                Compatible with any OCPP 2.0.1 charger.
-                ChargePoint · Blink · EVgo · Electrify America · ABB.
+                Works with any OCPP 2.0.1 charger — ChargePoint, Blink, EVgo, Electrify America, ABB, and more.
+                Connection is read-only. Zero downtime.
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Market momentum stats */}
+        <div
+          className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-px rounded-2xl overflow-hidden"
+          style={{ border: '1px solid var(--border)' }}
+        >
+          {MARKET_STATS.map((stat, i) => (
+            <div
+              key={i}
+              className="px-8 py-6 flex flex-col gap-1"
+              style={{ background: 'rgba(255,255,255,0.02)' }}
+            >
+              <div
+                className="stat-num font-bold"
+                style={{ fontSize: 'clamp(1.75rem, 3vw, 2.25rem)', letterSpacing: '-0.03em', color: 'var(--text-1)', lineHeight: 1 }}
+              >
+                {stat.value}
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: 'var(--text-2)', lineHeight: 1.5, fontWeight: 300 }}>
+                {stat.label}
+              </div>
+              <div style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.06em', textTransform: 'uppercase', marginTop: '2px' }}>
+                Source: {stat.source}
+              </div>
+            </div>
+          ))}
         </div>
 
         <p style={{ textAlign: 'center', marginTop: '1.5rem', fontSize: '0.75rem', color: 'var(--text-3)', lineHeight: 1.6 }}>
