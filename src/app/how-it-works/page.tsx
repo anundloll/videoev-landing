@@ -289,7 +289,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ─── ADVERTISER JOURNEY ──────────────────────────────────────── */}
-      <section id="advertisers" className="py-24" style={{ borderBottom: '1px solid var(--border)' }}>
+      <section id="advertisers" className="py-20" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16 items-start">
 
@@ -422,7 +422,7 @@ export default function HowItWorksPage() {
       {/* ─── CPO JOURNEY ─────────────────────────────────────────────── */}
       <section
         id="cpos"
-        className="py-24"
+        className="py-20"
         style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-5xl mx-auto px-6">
@@ -531,7 +531,7 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ─── UNDER THE HOOD ───────────────────────────────────────────── */}
-      <section className="py-24" style={{ borderBottom: '1px solid var(--border)' }}>
+      <section className="py-20" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16 items-start">
 

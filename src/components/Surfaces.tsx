@@ -33,9 +33,9 @@ const SURFACES = [
 
 export default function Surfaces() {
   return (
-    <section id="surfaces" className="py-24" style={{ background: 'var(--bg)' }}>
+    <section id="surfaces" className="py-20" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Ad Formats</p>
           <h2
             className="font-bold"

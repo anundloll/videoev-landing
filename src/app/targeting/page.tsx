@@ -275,9 +275,9 @@ export default function TargetingPage() {
       </section>
 
       {/* ─── SIGNAL LAYERS ───────────────────────────────────────────── */}
-      <section className="py-24" style={{ borderBottom: '1px solid var(--border)' }}>
+      <section className="py-20" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-xl" style={{ marginBottom: '4rem' }}>
+          <div className="max-w-xl" style={{ marginBottom: '3rem' }}>
             <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Signal layers</p>
             <h2
               className="font-bold"
@@ -395,7 +395,7 @@ export default function TargetingPage() {
 
       {/* ─── COMPARISON TABLE ─────────────────────────────────────────── */}
       <section
-        className="py-24"
+        className="py-20"
         style={{ background: 'var(--surface)', borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-5xl mx-auto px-6">

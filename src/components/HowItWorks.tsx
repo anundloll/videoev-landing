@@ -23,7 +23,7 @@ export default function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="py-24"
+      className="py-20"
       style={{
         background: 'var(--surface)',
         borderTop: '1px solid var(--border)',
@@ -31,7 +31,7 @@ export default function HowItWorks() {
       }}
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="mb-16">
+        <div className="mb-12">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>How It Works</p>
           <h2
             className="font-bold"

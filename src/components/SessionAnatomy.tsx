@@ -23,11 +23,11 @@ const STATS = [
 
 export default function SessionAnatomy() {
   return (
-    <section className="py-24" style={{ background: 'var(--surface-solid)' }}>
+    <section className="py-20" style={{ background: 'var(--surface-solid)' }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Session Anatomy</p>
           <h2
             className="font-bold"

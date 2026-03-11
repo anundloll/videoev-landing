@@ -50,11 +50,11 @@ const COMPARE = [
 
 export default function TheMedium() {
   return (
-    <section className="py-24" style={{ background: 'var(--bg)' }}>
+    <section className="py-20" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header — plain eyebrow, no pill */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>The Medium</p>
           <h2
             className="font-bold"

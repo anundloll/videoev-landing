@@ -10,13 +10,13 @@ const STATS = [
 export default function SearchSaturation() {
   return (
     <section
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-16">
+        <div className="mb-12">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>
             The Antidote to Search Saturation
           </p>

@@ -7,7 +7,7 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{
         paddingTop: '7rem',
-        paddingBottom: '0',
+        paddingBottom: '4rem',
         background: 'radial-gradient(ellipse 90% 55% at 50% -5%, rgba(0,66,37,0.22) 0%, transparent 60%)',
       }}
     >

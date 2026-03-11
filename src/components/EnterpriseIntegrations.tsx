@@ -47,7 +47,7 @@ export default function EnterpriseIntegrations() {
   return (
     <section
       id="tech"
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">

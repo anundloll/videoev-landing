@@ -334,12 +334,12 @@ export default function DataProducts() {
   return (
     <section
       id="data-products"
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="mb-20">
+        <div className="mb-12">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Data Products</p>
           <h2
             className="font-bold"
@@ -367,7 +367,7 @@ export default function DataProducts() {
             return (
               <div
                 key={product.n}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-16"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center py-12"
                 style={{ borderTop: i > 0 ? '1px solid var(--border)' : 'none' }}
               >
                 {/* Diagram */}

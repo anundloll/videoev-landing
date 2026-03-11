@@ -19,7 +19,7 @@ export default function Audience() {
   return (
     <section
       id="audience"
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">

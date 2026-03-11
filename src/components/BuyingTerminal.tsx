@@ -19,13 +19,13 @@ export default function BuyingTerminal() {
   return (
     <section
       id="advertisers"
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}
     >
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="mb-14">
+        <div className="mb-10">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>For Brands</p>
           <h2
             className="font-bold"

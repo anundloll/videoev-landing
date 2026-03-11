@@ -25,7 +25,7 @@ export default function ROICalculator() {
 
   return (
     <section
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-5xl mx-auto px-6">

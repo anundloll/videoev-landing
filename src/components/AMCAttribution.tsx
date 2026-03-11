@@ -24,7 +24,7 @@ export default function AMCAttribution() {
 
   return (
     <section
-      className="py-24"
+      className="py-20"
       style={{ background: 'var(--bg)' }}
     >
       <div className="max-w-6xl mx-auto px-6">

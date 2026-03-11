@@ -71,7 +71,7 @@ export default function StakeholderSection() {
 
   return (
     <section
-      className="py-24"
+      className="py-20"
       style={{
         background: 'var(--surface)',
         borderTop: '1px solid var(--border)',

@@ -171,7 +171,7 @@ export default function IdentityPage() {
         </section>
 
         {/* How it works — 4 steps */}
-        <section className="py-24" style={{ background: 'var(--bg)' }}>
+        <section className="py-20" style={{ background: 'var(--bg)' }}>
           <div className="max-w-4xl mx-auto px-6">
             <div className="mb-14">
               <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>How Resolution Works</p>
@@ -242,7 +242,7 @@ export default function IdentityPage() {
         <section
           style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
         >
-          <div className="max-w-4xl mx-auto px-6 py-24">
+          <div className="max-w-4xl mx-auto px-6 py-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>What Gets Resolved</p>
@@ -287,7 +287,7 @@ export default function IdentityPage() {
         </section>
 
         {/* FAQ — plain prose */}
-        <section className="py-24" style={{ background: 'var(--bg)' }}>
+        <section className="py-20" style={{ background: 'var(--bg)' }}>
           <div className="max-w-4xl mx-auto px-6">
             <div className="mb-14">
               <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Technical Questions</p>
