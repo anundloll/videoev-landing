@@ -5,6 +5,7 @@ import StatsBar from '@/components/StatsBar';
 import TheMedium from '@/components/TheMedium';
 import Audience from '@/components/Audience';
 import HowItWorks from '@/components/HowItWorks';
+import DataProducts from '@/components/DataProducts';
 import DualCTA from '@/components/DualCTA';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
@@ -29,6 +30,7 @@ export default function Home() {
       <TheMedium />
       <Audience />
       <HowItWorks />
+      <DataProducts />
       <DualCTA />
       <Footer />
       <ContactModal />
