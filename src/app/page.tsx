@@ -3,6 +3,7 @@ import Nav from '@/components/Nav';
 import Hero from '@/components/Hero';
 import StatsBar from '@/components/StatsBar';
 import TheMedium from '@/components/TheMedium';
+import SessionAnatomy from '@/components/SessionAnatomy';
 import Audience from '@/components/Audience';
 import HowItWorks from '@/components/HowItWorks';
 import DataProducts from '@/components/DataProducts';
@@ -28,6 +29,7 @@ export default function Home() {
       <Hero />
       <StatsBar />
       <TheMedium />
+      <SessionAnatomy />
       <Audience />
       <HowItWorks />
       <DataProducts />
