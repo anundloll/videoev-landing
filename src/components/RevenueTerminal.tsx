@@ -169,7 +169,7 @@ export default function RevenueTerminal() {
                 className="btn-primary flex-shrink-0"
                 style={{ fontSize: '0.8125rem', padding: '0.625rem 1.25rem' }}
               >
-                Connect Your Network
+                Partner With Us
               </button>
             </div>
           </div>

@@ -64,63 +64,14 @@ export default function Hero() {
             className="btn-primary"
             style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}
           >
-            Launch Campaign
+            Get Started
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
               <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
           <button onClick={() => openModal('partner')} className="btn-ghost" style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}>
-            Connect Your Network
+            For CPOs
           </button>
-        </div>
-
-        {/* Trust line */}
-        <p
-          className="fade-up fade-up-4"
-          style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-3)' }}
-        >
-          Expanding across the US ·{' '}
-          <a
-            href="https://demo.videoev.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: 'var(--text-3)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
-            className="hover:text-white transition-colors"
-          >
-            See live demo →
-          </a>
-          {' '}·{' '}
-          <a
-            href="mailto:sales@videoev.com"
-            style={{ color: 'var(--text-3)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
-            className="hover:text-white transition-colors"
-          >
-            sales@videoev.com
-          </a>
-        </p>
-
-        {/* Protocol badges */}
-        <div
-          className="fade-up fade-up-4 flex items-center justify-center gap-3 flex-wrap"
-          style={{ marginTop: '2rem' }}
-        >
-          {['OCPP 2.0.1', 'OpenRTB 2.6', 'VAST 4.2', 'Amazon AMC'].map((badge) => (
-            <span
-              key={badge}
-              style={{
-                fontSize: '0.6875rem',
-                color: 'var(--text-3)',
-                fontFamily: 'monospace',
-                letterSpacing: '0.04em',
-                padding: '0.25rem 0.625rem',
-                borderRadius: '4px',
-                border: '1px solid rgba(255,255,255,0.06)',
-                background: 'rgba(255,255,255,0.02)',
-              }}
-            >
-              {badge}
-            </span>
-          ))}
         </div>
 
       </div>

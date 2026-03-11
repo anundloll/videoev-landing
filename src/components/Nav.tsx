@@ -72,14 +72,14 @@ export default function Nav() {
           </Link>
         </div>
 
-        {/* Right CTA — Launch Campaign */}
+        {/* Right CTA */}
         <div className="hidden md:flex items-center">
           <button
             onClick={() => openModal('advertiser')}
             className="btn-primary"
             style={{ padding: '0.5rem 1.125rem', fontSize: '0.8125rem' }}
           >
-            Launch Campaign
+            Get Started
           </button>
         </div>
 
@@ -109,7 +109,7 @@ export default function Nav() {
               className="btn-primary"
               style={{ width: '100%', justifyContent: 'center' }}
             >
-              Launch Campaign
+              Get Started
             </button>
           </div>
         </div>
