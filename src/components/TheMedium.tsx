@@ -54,7 +54,7 @@ export default function TheMedium() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header — plain eyebrow, no pill */}
-        <div className="max-w-2xl mb-14">
+        <div className="mb-14">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>The Medium</p>
           <h2
             className="font-bold"

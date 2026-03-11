@@ -27,7 +27,7 @@ export default function DriverExperience() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-10">
+        <div className="mb-10">
           <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Driver Experience</p>
           <h2
             className="font-bold"

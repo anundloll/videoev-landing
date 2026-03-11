@@ -58,7 +58,7 @@ export default function TechSpecs() {
     >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="max-w-2xl mb-14">
+        <div className="mb-14">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Ad-Tech Architecture</p>
           <h2
             className="font-bold"

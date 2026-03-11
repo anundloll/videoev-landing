@@ -21,7 +21,7 @@ export default function Dayparting() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-xl" style={{ marginBottom: '3rem' }}>
+        <div className="" style={{ marginBottom: '3rem' }}>
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Inventory Intelligence</p>
           <h2
             className="font-bold"

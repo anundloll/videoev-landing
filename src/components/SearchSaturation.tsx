@@ -16,7 +16,7 @@ export default function SearchSaturation() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="mb-16">
           <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>
             The Antidote to Search Saturation
           </p>

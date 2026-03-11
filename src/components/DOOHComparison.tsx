@@ -181,7 +181,7 @@ export default function DOOHComparison() {
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}
-        <div className="max-w-2xl mb-12">
+        <div className="mb-12">
           <p className="eyebrow" style={{ marginBottom: '0.75rem' }}>Media Landscape</p>
           <h2
             className="font-bold"
