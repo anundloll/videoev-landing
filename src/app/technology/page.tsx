@@ -1,11 +1,39 @@
 'use client';
 
+import Link from 'next/link';
 import Nav from '@/components/Nav';
 import TechSpecs from '@/components/TechSpecs';
 import EnterpriseIntegrations from '@/components/EnterpriseIntegrations';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 import { openModal } from '@/lib/openModal';
+
+const PIPELINE_STEPS = [
+  {
+    num: '01',
+    label: 'CSMS Event',
+    body: 'Charger fires an OCPP session event. VideoEV ingests it in real time across Driivz, AMPECO, ChargeLab, and EV Connect — normalized to a single payload regardless of source.',
+    tag: 'OCPP 1.6 · 2.0.1',
+  },
+  {
+    num: '02',
+    label: 'Identity Resolution',
+    body: 'The EVCCID — an encrypted hardware identifier — is matched against the Vehicle Identity Graph. No VIN transmitted. One confirmed match returns Make, Model, Trim, and MSRP proxy.',
+    tag: 'ISO 15118 · Deterministic',
+  },
+  {
+    num: '03',
+    label: 'Ad Auction',
+    body: 'Vehicle profile passes to the SSP as a targeting signal before the first ad slot fills. Buyers bid on VIN-level segments — Tesla owners, Porsche drivers, luxury EV buyers — in real time.',
+    tag: 'Real-time · SSP bid request',
+  },
+  {
+    num: '04',
+    label: 'Attribution',
+    body: 'Impressions are matched to downstream purchase events via Amazon Marketing Cloud. Closed-loop attribution without a pixel — from charging session to Amazon cart.',
+    tag: 'Amazon AMC · Closed-loop',
+  },
+];
 
 const CSMS_PARTNERS = [
   {
@@ -35,53 +63,31 @@ const PII_STEPS = [
     num: '01',
     label: 'Vehicle Arrives',
     detail: 'CSMS captures raw session event — VIN or vehicle token present.',
-    icon: '⚡',
+    highlight: false,
+    strike: false,
   },
   {
     num: '02',
     label: 'SHA-256 Hash',
     detail: 'VideoEV applies one-way SHA-256 to the vehicle identifier in-memory.',
-    icon: '🔒',
+    highlight: false,
+    strike: false,
   },
   {
     num: '03',
     label: 'Raw Identifier Discarded',
     detail: 'Original VIN is never written to disk, never logged, never stored.',
-    icon: '🗑',
+    highlight: false,
+    strike: true,
   },
   {
     num: '04',
     label: 'Hashed Token Released',
     detail: 'hashed_vehicle_token enters the ad pipeline for AMC segment matching.',
-    icon: '✓',
+    highlight: true,
+    strike: false,
   },
 ];
-
-const WEBHOOK_REQUEST = `POST /v1/webhooks/session-event
-Authorization: Bearer <your_api_key>
-Content-Type: application/json
-
-{
-  "event_type": "session_update",
-  "session_id": "ev_sess_f7a2b4c",
-  "hashed_vehicle_token": "sha256:a3f4b2c8d9e1f2a3b4c5d6e7f8
-                            a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
-  "charger_id": "site_xyz_port_2",
-  "current_soc_percent": 42,
-  "estimated_dwell_time_mins": 35,
-  "network_id": "evconnect_west",
-  "timestamp_utc": "2026-03-08T14:22:33Z"
-}`;
-
-const WEBHOOK_RESPONSE = `HTTP/1.1 202 Accepted
-
-{
-  "status": "queued",
-  "ad_eligible": true,
-  "matched_segment": "ev_buyer_high_intent",
-  "recommended_creative_format": "video_15s",
-  "estimated_inventory_window_mins": 35
-}`;
 
 export default function TechnologyPage() {
   return (
@@ -90,53 +96,47 @@ export default function TechnologyPage() {
 
       <div style={{ paddingTop: '4rem' }}>
 
-        {/* ── Hero ─────────────────────────────────────────────── */}
+        {/* ── Hero ──────────────────────────────────────────────── */}
         <section
           className="relative overflow-hidden"
-          style={{ padding: '3.5rem 1.5rem 2rem' }}
+          style={{
+            paddingTop: '6rem',
+            paddingBottom: '5rem',
+            background: 'radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0,66,37,0.2) 0%, transparent 65%)',
+          }}
         >
-          {/* Ambient glow */}
-          <div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none"
-            style={{
-              background:
-                'radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0,66,37,0.12), transparent)',
-            }}
-          />
-
-          <div className="relative max-w-3xl mx-auto text-center">
-            <div
-              className="eyebrow inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
+          <div className="max-w-4xl mx-auto px-6">
+            <p className="eyebrow" style={{ marginBottom: '1rem' }}>Technology</p>
+            <h1
+              className="font-bold"
               style={{
-                background: 'rgba(0,66,37,0.15)',
-                border: '1px solid rgba(0,66,37,0.4)',
-                color: 'var(--accent-green)',
+                fontSize: 'clamp(2.5rem, 5.5vw, 4rem)',
+                lineHeight: 1.08,
+                letterSpacing: '-0.025em',
+                marginBottom: '1.5rem',
+                maxWidth: '24ch',
               }}
             >
-              Technology
-            </div>
-
-            <h1
-              className="font-bold leading-tight mb-5"
-              style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', color: 'var(--text)' }}
-            >
-              CSMS-Agnostic{' '}
-              <span style={{ color: 'var(--accent)' }}>Middleware</span>
-              <br />
-              for the Charging Network
+              Four layers. One integration.{' '}
+              <span className="accent-text">Zero guesswork.</span>
             </h1>
-
             <p
-              className="max-w-2xl mx-auto leading-relaxed"
-              style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '2.5rem' }}
+              style={{
+                fontSize: 'clamp(1rem, 1.75vw, 1.125rem)',
+                color: 'var(--text-2)',
+                fontWeight: 300,
+                maxWidth: '58ch',
+                lineHeight: 1.7,
+                marginBottom: '2.5rem',
+              }}
             >
-              VideoEV connects to any charge management system, normalizes session data
-              in real time, and delivers it to your ad stack — without ever storing a
-              raw vehicle identifier.
+              VideoEV is a CSMS-agnostic middleware that ingests EV charging session events,
+              resolves anonymous hardware identifiers to verified vehicle profiles, runs a
+              real-time ad auction, and closes the attribution loop via Amazon Marketing Cloud —
+              without ever storing a raw vehicle identifier.
             </p>
 
-            {/* Stat row */}
+            {/* Stat pills */}
             <div
               className="inline-flex gap-8 flex-wrap justify-center px-6 py-4 rounded-2xl"
               style={{
@@ -152,13 +152,13 @@ export default function TechnologyPage() {
               ].map(({ val, label }) => (
                 <div key={label} className="text-center">
                   <div
-                    className="font-bold"
+                    className="font-bold stat-num"
                     style={{ fontSize: '1.5rem', color: 'var(--accent)', lineHeight: 1 }}
                   >
                     {val}
                   </div>
                   <div
-                    style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.25rem', letterSpacing: '0.05em' }}
+                    style={{ fontSize: '0.7rem', color: 'var(--text-3)', marginTop: '0.25rem', letterSpacing: '0.05em', textTransform: 'uppercase' }}
                   >
                     {label}
                   </div>
@@ -168,146 +168,147 @@ export default function TechnologyPage() {
           </div>
         </section>
 
-        {/* ── Universal CSMS Compatibility ─────────────────────── */}
-        <section style={{ padding: '2rem 1.5rem 4rem' }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <div
-                className="section-label inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-                style={{
-                  background: 'rgba(0,66,37,0.12)',
-                  border: '1px solid rgba(0,66,37,0.35)',
-                  color: 'var(--accent-green)',
-                }}
-              >
-                Universal Compatibility
-              </div>
+        {/* ── End-to-end pipeline ────────────────────────────────── */}
+        <section
+          className="py-20"
+          style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
+        >
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center max-w-xl mx-auto mb-14">
+              <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>End-to-End Stack</p>
               <h2
-                className="font-bold mb-4"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--text)' }}
+                className="font-bold"
+                style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
               >
-                One Integration. Every Network.
+                From charger plug-in to purchase attribution
               </h2>
-              <p
-                className="max-w-xl mx-auto"
-                style={{ color: 'var(--text-muted)', lineHeight: '1.7' }}
-              >
-                Every CSMS exposes a different API surface. VideoEV abstracts that
-                complexity into a single normalized event stream — so your ad infrastructure
-                never breaks when a network upgrades their platform.
-              </p>
             </div>
 
-            {/* Architecture diagram */}
+            {/* Pipeline steps — vertical list with connecting lines */}
             <div
-              className="rounded-2xl p-6 mb-8"
-              style={{
-                background: 'rgba(0,66,37,0.05)',
-                border: '1px solid rgba(0,66,37,0.2)',
-              }}
+              className="flex flex-col gap-0"
+              style={{ borderTop: '1px solid var(--border)' }}
             >
-              <div className="flex items-center gap-3 mb-6">
+              {PIPELINE_STEPS.map((s) => (
                 <div
-                  className="w-2 h-2 rounded-full"
-                  style={{ background: 'var(--accent-green)' }}
-                />
-                <span
-                  style={{ fontSize: '0.7rem', color: 'var(--text-muted)', letterSpacing: '0.1em' }}
+                  key={s.num}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-6 py-10"
+                  style={{ borderBottom: '1px solid var(--border)' }}
                 >
-                  INTEGRATION ARCHITECTURE
-                </span>
-              </div>
-
-              {/* CSMS row */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                {CSMS_PARTNERS.map((p) => (
-                  <div
-                    key={p.name}
-                    className="rounded-xl p-4 text-center"
-                    style={{
-                      background: 'rgba(255,255,255,0.03)',
-                      border: '1px solid rgba(255,255,255,0.08)',
-                    }}
-                  >
-                    <div
-                      className="font-bold mb-1"
-                      style={{ color: 'var(--text)', fontSize: '0.95rem' }}
+                  <div className="md:col-span-1">
+                    <span
+                      className="font-bold stat-num"
+                      style={{ fontSize: '0.75rem', color: 'var(--accent)', letterSpacing: '0.06em' }}
                     >
-                      {p.name}
-                    </div>
-                    <div
-                      className="inline-block px-2 py-0.5 rounded-full mb-2"
+                      {s.num}
+                    </span>
+                  </div>
+                  <div className="md:col-span-4">
+                    <h3
+                      className="font-semibold"
+                      style={{ fontSize: '1.0625rem', letterSpacing: '-0.01em', lineHeight: 1.3, marginBottom: '0.5rem' }}
+                    >
+                      {s.label}
+                    </h3>
+                    <span
                       style={{
-                        background: 'rgba(0,168,150,0.1)',
-                        border: '1px solid rgba(0,168,150,0.25)',
-                        color: 'var(--accent)',
-                        fontSize: '0.65rem',
-                        letterSpacing: '0.06em',
+                        fontSize: '0.6875rem',
+                        color: 'var(--text-3)',
+                        fontFamily: 'monospace',
+                        letterSpacing: '0.04em',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid var(--border)',
+                        background: 'rgba(255,255,255,0.02)',
                       }}
                     >
-                      {p.tag.toUpperCase()}
-                    </div>
-                    <div
-                      style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.5' }}
+                      {s.tag}
+                    </span>
+                  </div>
+                  <div className="md:col-span-7">
+                    <p
+                      style={{
+                        fontSize: '0.9rem',
+                        color: 'var(--text-2)',
+                        lineHeight: 1.75,
+                        fontWeight: 300,
+                        maxWidth: '56ch',
+                      }}
                     >
-                      {p.description}
-                    </div>
+                      {s.body}
+                    </p>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              {/* Arrow down */}
-              <div className="flex justify-center mb-6">
-                <div className="flex flex-col items-center gap-0">
-                  <div
-                    className="w-0.5 h-8"
-                    style={{ background: 'linear-gradient(to bottom, rgba(0,100,50,0.2), rgba(0,100,50,0.8))' }}
-                  />
-                  <div
-                    className="font-semibold px-5 py-2 rounded-full"
-                    style={{
-                      background: 'rgba(0,66,37,0.35)',
-                      border: '1px solid rgba(0,100,50,0.6)',
-                      color: 'var(--accent-green)',
-                      letterSpacing: '0.1em',
-                      fontSize: '0.7rem',
-                      boxShadow: '0 0 16px rgba(0,66,37,0.25)',
-                    }}
-                  >
-                    VIDEOEV MIDDLEWARE
-                  </div>
-                  <div
-                    className="w-0.5 h-8"
-                    style={{ background: 'linear-gradient(to bottom, rgba(0,100,50,0.8), rgba(0,100,50,0.2))' }}
-                  />
+        {/* ── CSMS Compatibility ─────────────────────────────────── */}
+        <section className="py-20" style={{ background: 'var(--bg)' }}>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Universal Compatibility</p>
+                <h2
+                  className="font-bold"
+                  style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.02em', marginBottom: '1.25rem' }}
+                >
+                  One integration. Every network.
+                </h2>
+                <p
+                  style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}
+                >
+                  Every CSMS exposes a different API surface. VideoEV abstracts that
+                  complexity into a single normalized event stream — so your ad infrastructure
+                  never breaks when a network upgrades their platform.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['OCPP 1.6', 'OCPP 2.0.1', 'REST polling', 'Push webhooks', 'OCPI'].map((b) => (
+                    <span
+                      key={b}
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{
+                        background: 'rgba(0,66,37,0.1)',
+                        border: '1px solid rgba(0,66,37,0.25)',
+                        color: 'var(--accent)',
+                      }}
+                    >
+                      {b}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              {/* Output row */}
-              <div className="grid grid-cols-3 gap-3">
-                {[
-                  { label: 'Ad Stack', sub: 'VideoEV Webhook' },
-                  { label: 'Amazon DSP', sub: 'AMC Segments' },
-                  { label: 'Measurement', sub: 'Attribution API' },
-                ].map((o) => (
+              <div className="flex flex-col gap-3">
+                {CSMS_PARTNERS.map((p) => (
                   <div
-                    key={o.label}
-                    className="rounded-xl p-3 text-center"
+                    key={p.name}
+                    className="rounded-xl p-5 flex items-start gap-4"
                     style={{
-                      background: 'rgba(0,66,37,0.1)',
-                      border: '1px solid rgba(0,66,37,0.3)',
+                      background: 'var(--surface)',
+                      border: '1px solid var(--border)',
                     }}
                   >
-                    <div
-                      className="font-semibold"
-                      style={{ color: 'var(--text)', fontSize: '0.85rem' }}
-                    >
-                      {o.label}
-                    </div>
-                    <div
-                      style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}
-                    >
-                      {o.sub}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="font-semibold" style={{ fontSize: '0.9375rem' }}>{p.name}</span>
+                        <span
+                          className="px-2 py-0.5 rounded text-xs font-medium"
+                          style={{
+                            background: 'rgba(0,168,150,0.08)',
+                            border: '1px solid rgba(0,168,150,0.2)',
+                            color: 'var(--accent)',
+                            fontSize: '0.65rem',
+                            letterSpacing: '0.05em',
+                          }}
+                        >
+                          {p.tag.toUpperCase()}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: '0.8rem', color: 'var(--text-3)', lineHeight: 1.55 }}>
+                        {p.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -316,93 +317,161 @@ export default function TechnologyPage() {
           </div>
         </section>
 
-        {/* ── Zero-PII Architecture ─────────────────────────────── */}
-        <section style={{ padding: '4rem 1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-10 items-start">
-              {/* Left: copy */}
+        {/* ── Identity Resolution teaser ─────────────────────────── */}
+        <section
+          className="py-20"
+          style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
+        >
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div>
-                <div
-                  className="section-label inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-                  style={{
-                    background: 'rgba(0,66,37,0.12)',
-                    border: '1px solid rgba(0,66,37,0.35)',
-                    color: 'var(--accent-green)',
-                  }}
-                >
-                  Privacy-First Architecture
-                </div>
+                <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Vehicle Identity Graph</p>
                 <h2
-                  className="font-bold mb-4"
-                  style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', color: 'var(--text)' }}
+                  className="font-bold"
+                  style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.02em', marginBottom: '1.25rem' }}
                 >
-                  Zero PII.{' '}
-                  <span style={{ color: 'var(--accent)' }}>Full Attribution.</span>
+                  The charger doesn&apos;t know what car just plugged in.{' '}
+                  <span className="accent-text">We do.</span>
                 </h2>
-                <p
-                  className="mb-6"
-                  style={{ color: 'var(--text-muted)', lineHeight: '1.75', fontSize: '1rem' }}
-                >
-                  Raw vehicle identifiers are hashed at the point of ingestion. The original
-                  value is never written to disk, never logged, and never transmitted downstream.
-                  Attribution precision is preserved through the hashed token — without
-                  any PII leaving the origin system.
+                <p style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.5rem' }}>
+                  Under ISO 15118, EV chargers never receive Make, Model, or VIN — only an
+                  encrypted hardware identifier called an EVCCID. VideoEV built the resolution
+                  layer that deterministically matches it to a verified vehicle profile before
+                  the first ad slot fills.
                 </p>
+                <p style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '2rem' }}>
+                  No probabilistic modelling. No behavioural inference. A confirmed match
+                  attaches Make, Model, Trim, Model Year, and MSRP proxy — passed to the SSP
+                  in the bid request.
+                </p>
+                <Link
+                  href="/identity"
+                  className="btn-primary"
+                  style={{ display: 'inline-flex', fontSize: '0.875rem' }}
+                >
+                  Read the full Identity Graph explainer
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </Link>
+              </div>
 
-                {/* Compliance badges */}
-                <div className="flex flex-wrap gap-2">
-                  {['GDPR Compatible', 'CCPA Aligned', 'No Raw VIN Storage', 'SHA-256 One-Way Hash'].map(
-                    (badge) => (
+              {/* Protocol / signal card */}
+              <div
+                className="rounded-2xl overflow-hidden"
+                style={{ border: '1px solid var(--border)', background: 'var(--bg)' }}
+              >
+                <div
+                  className="px-5 py-4 flex items-center justify-between"
+                  style={{ borderBottom: '1px solid var(--border)', background: 'var(--surface-2)' }}
+                >
+                  <span className="eyebrow text-xs">Resolution pipeline</span>
+                  <span
+                    className="text-xs px-2 py-0.5 rounded font-semibold"
+                    style={{ background: 'rgba(0,66,37,0.15)', color: 'var(--accent)', border: '1px solid rgba(0,66,37,0.3)' }}
+                  >
+                    ISO 15118
+                  </span>
+                </div>
+                <div
+                  className="divide-y"
+                  style={{ '--tw-divide-color': 'var(--border)' } as React.CSSProperties}
+                >
+                  {[
+                    { label: 'Input', value: 'EVCCID (hardware MAC-derived)', dim: false },
+                    { label: 'Lookup', value: 'Vehicle Identity Graph', dim: false },
+                    { label: 'Output: Make & Model', value: 'Confirmed — not inferred', dim: false },
+                    { label: 'Output: MSRP Proxy', value: 'Income signal from vehicle class', dim: false },
+                    { label: 'Output: Match confidence', value: 'High / medium / unresolved', dim: false },
+                    { label: 'PII stored', value: 'None. SHA-256 hash only.', dim: true },
+                  ].map((row) => (
+                    <div key={row.label} className="px-5 py-3.5 flex items-start justify-between gap-4">
                       <span
-                        key={badge}
-                        className="px-3 py-1 rounded-full text-xs font-medium"
+                        className="font-medium"
+                        style={{ fontSize: '0.8125rem', color: 'var(--text-3)', flexShrink: 0 }}
+                      >
+                        {row.label}
+                      </span>
+                      <span
                         style={{
-                          background: 'rgba(0,66,37,0.12)',
-                          border: '1px solid rgba(0,66,37,0.3)',
-                          color: 'var(--accent-green)',
+                          fontSize: '0.8125rem',
+                          color: row.dim ? 'var(--text-3)' : 'var(--text-2)',
+                          textAlign: 'right',
+                          fontWeight: row.dim ? 300 : 400,
                         }}
                       >
-                        {badge}
+                        {row.value}
                       </span>
-                    )
-                  )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Zero PII Architecture ──────────────────────────────── */}
+        <section className="py-20" style={{ background: 'var(--bg)' }}>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+              <div>
+                <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>Privacy-First Architecture</p>
+                <h2
+                  className="font-bold"
+                  style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.4rem)', lineHeight: 1.12, letterSpacing: '-0.02em', marginBottom: '1.25rem' }}
+                >
+                  Zero PII.{' '}
+                  <span className="accent-text">Full attribution.</span>
+                </h2>
+                <p
+                  style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.75, fontWeight: 300, marginBottom: '1.75rem' }}
+                >
+                  Raw vehicle identifiers are hashed at the point of ingestion. The original
+                  value is never written to disk, never logged, and never transmitted
+                  downstream. Attribution precision is preserved through the hashed token —
+                  without any PII leaving the origin system.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['GDPR Compatible', 'CCPA Aligned', 'No Raw VIN Storage', 'SHA-256 One-Way Hash'].map((b) => (
+                    <span
+                      key={b}
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{
+                        background: 'rgba(0,66,37,0.1)',
+                        border: '1px solid rgba(0,66,37,0.25)',
+                        color: 'var(--accent)',
+                      }}
+                    >
+                      {b}
+                    </span>
+                  ))}
                 </div>
               </div>
 
-              {/* Right: flow steps */}
-              <div className="space-y-3">
-                {PII_STEPS.map((step, i) => (
+              <div className="flex flex-col gap-3">
+                {PII_STEPS.map((step) => (
                   <div
                     key={step.num}
                     className="flex gap-4 rounded-xl p-4"
                     style={{
-                      background:
-                        step.num === '03'
-                          ? 'rgba(180,30,30,0.06)'
-                          : step.num === '04'
-                          ? 'rgba(0,66,37,0.1)'
-                          : 'rgba(255,255,255,0.02)',
-                      border:
-                        step.num === '03'
-                          ? '1px solid rgba(180,30,30,0.2)'
-                          : step.num === '04'
-                          ? '1px solid rgba(0,66,37,0.3)'
-                          : '1px solid rgba(255,255,255,0.06)',
+                      background: step.strike
+                        ? 'rgba(180,30,30,0.06)'
+                        : step.highlight
+                        ? 'rgba(0,66,37,0.1)'
+                        : 'rgba(255,255,255,0.02)',
+                      border: step.strike
+                        ? '1px solid rgba(180,30,30,0.2)'
+                        : step.highlight
+                        ? '1px solid rgba(0,66,37,0.3)'
+                        : '1px solid var(--border)',
                     }}
                   >
                     <div
-                      className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold"
+                      className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold stat-num"
                       style={{
-                        background:
-                          step.num === '03'
-                            ? 'rgba(180,30,30,0.15)'
-                            : 'rgba(0,66,37,0.2)',
-                        border:
-                          step.num === '03'
-                            ? '1px solid rgba(180,30,30,0.3)'
-                            : '1px solid rgba(0,66,37,0.4)',
-                        color:
-                          step.num === '03' ? 'rgba(220,80,80,0.9)' : 'var(--accent)',
+                        background: step.strike ? 'rgba(180,30,30,0.15)' : 'rgba(0,66,37,0.2)',
+                        border: step.strike ? '1px solid rgba(180,30,30,0.3)' : '1px solid rgba(0,66,37,0.4)',
+                        color: step.strike ? 'rgba(220,80,80,0.9)' : 'var(--accent)',
                       }}
                     >
                       {step.num}
@@ -411,29 +480,18 @@ export default function TechnologyPage() {
                       <div
                         className="font-semibold mb-0.5"
                         style={{
-                          color: step.num === '03' ? 'rgba(220,80,80,0.85)' : 'var(--text)',
+                          color: step.strike ? 'rgba(220,80,80,0.85)' : 'var(--text-1)',
                           fontSize: '0.9rem',
-                          textDecoration: step.num === '03' ? 'line-through' : 'none',
+                          textDecoration: step.strike ? 'line-through' : 'none',
                           textDecorationColor: 'rgba(220,80,80,0.5)',
                         }}
                       >
                         {step.label}
                       </div>
-                      <div
-                        style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.55' }}
-                      >
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-3)', lineHeight: 1.55 }}>
                         {step.detail}
                       </div>
                     </div>
-
-                    {/* Connector line to next */}
-                    {i < PII_STEPS.length - 1 && (
-                      <div
-                        aria-hidden
-                        className="absolute left-7 mt-11 w-px h-3"
-                        style={{ display: 'none' }} // hidden — spacing conveys flow
-                      />
-                    )}
                   </div>
                 ))}
               </div>
@@ -441,35 +499,21 @@ export default function TechnologyPage() {
           </div>
         </section>
 
-        {/* ── Webhook API ──────────────────────────────────────── */}
+        {/* ── Webhook API ──────────────────────────────────────────── */}
         <section
-          style={{
-            padding: '4rem 1.5rem',
-            borderTop: '1px solid rgba(255,255,255,0.05)',
-          }}
+          className="py-20"
+          style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
         >
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10">
-              <div
-                className="section-label inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase"
-                style={{
-                  background: 'rgba(0,66,37,0.12)',
-                  border: '1px solid rgba(0,66,37,0.35)',
-                  color: 'var(--accent-green)',
-                }}
-              >
-                API Reference
-              </div>
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center max-w-xl mx-auto mb-12">
+              <p className="eyebrow" style={{ marginBottom: '0.875rem' }}>API Reference</p>
               <h2
-                className="font-bold mb-4"
-                style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--text)' }}
+                className="font-bold"
+                style={{ fontSize: 'clamp(1.875rem, 3.5vw, 2.75rem)', lineHeight: 1.12, letterSpacing: '-0.02em' }}
               >
-                The Universal Webhook Schema
+                The universal webhook schema
               </h2>
-              <p
-                className="max-w-xl mx-auto"
-                style={{ color: 'var(--text-muted)', lineHeight: '1.7' }}
-              >
+              <p style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.6, fontWeight: 300, marginTop: '1rem' }}>
                 Every CSMS speaks a different dialect. VideoEV normalizes them into a
                 single consistent payload — one integration for every network.
               </p>
@@ -493,31 +537,21 @@ export default function TechnologyPage() {
                       className="px-2 py-0.5 rounded text-xs font-bold"
                       style={{
                         background: 'rgba(0,66,37,0.4)',
-                        color: 'var(--accent-green)',
+                        color: 'var(--accent)',
                         border: '1px solid rgba(0,66,37,0.5)',
                       }}
                     >
                       POST
                     </span>
-                    <span
-                      style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}
-                    >
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-3)', fontFamily: 'monospace' }}>
                       /v1/webhooks/session-event
                     </span>
                   </div>
-                  <span
-                    style={{ fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}
-                  >
+                  <span style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.08em' }}>
                     REQUEST
                   </span>
                 </div>
-                <div
-                  style={{
-                    background: '#080d0b',
-                    padding: '1.25rem 1.25rem 1.5rem',
-                    overflowX: 'auto',
-                  }}
-                >
+                <div style={{ background: '#080d0b', padding: '1.25rem 1.25rem 1.5rem', overflowX: 'auto' }}>
                   <pre
                     style={{
                       margin: 0,
@@ -528,9 +562,7 @@ export default function TechnologyPage() {
                       whiteSpace: 'pre',
                     }}
                   >
-                    <span style={{ color: 'rgba(0,200,100,0.7)' }}>
-                      POST /v1/webhooks/session-event
-                    </span>
+                    <span style={{ color: 'rgba(0,200,100,0.7)' }}>POST /v1/webhooks/session-event</span>
                     {'\n'}
                     <span style={{ color: 'rgba(200,180,100,0.6)' }}>Authorization:</span>
                     <span style={{ color: '#c8d9cc' }}> Bearer </span>
@@ -610,25 +642,15 @@ export default function TechnologyPage() {
                     >
                       202
                     </span>
-                    <span
-                      style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}
-                    >
+                    <span style={{ fontSize: '0.8rem', color: 'var(--text-3)', fontFamily: 'monospace' }}>
                       Accepted
                     </span>
                   </div>
-                  <span
-                    style={{ fontSize: '0.65rem', color: 'var(--text-muted)', letterSpacing: '0.08em' }}
-                  >
+                  <span style={{ fontSize: '0.65rem', color: 'var(--text-3)', letterSpacing: '0.08em' }}>
                     RESPONSE
                   </span>
                 </div>
-                <div
-                  style={{
-                    background: '#080d0b',
-                    padding: '1.25rem 1.25rem 1.5rem',
-                    overflowX: 'auto',
-                  }}
-                >
+                <div style={{ background: '#080d0b', padding: '1.25rem 1.25rem 1.5rem', overflowX: 'auto' }}>
                   <pre
                     style={{
                       margin: 0,
@@ -682,10 +704,7 @@ export default function TechnologyPage() {
                     { key: 'current_soc_percent', desc: 'State of charge at session event' },
                     { key: 'estimated_dwell_time_mins', desc: 'Predicted session duration' },
                   ].map(({ key, desc }) => (
-                    <div
-                      key={key}
-                      className="flex items-start gap-2 mb-1.5 last:mb-0"
-                    >
+                    <div key={key} className="flex items-start gap-2 mb-1.5 last:mb-0">
                       <span
                         style={{
                           fontFamily: 'monospace',
@@ -697,7 +716,7 @@ export default function TechnologyPage() {
                       >
                         {key}
                       </span>
-                      <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                      <span style={{ fontSize: '0.72rem', color: 'var(--text-3)' }}>
                         — {desc}
                       </span>
                     </div>
@@ -708,15 +727,15 @@ export default function TechnologyPage() {
           </div>
         </section>
 
-        {/* ── Tech Specs + Enterprise Integrations ─────────────── */}
+        {/* ── TechSpecs + Enterprise Integrations ──────────────── */}
         <TechSpecs />
         <EnterpriseIntegrations />
 
-        {/* ── CTA Strip ────────────────────────────────────────── */}
-        <section style={{ padding: '3rem 1.5rem 5rem' }}>
-          <div className="max-w-3xl mx-auto">
+        {/* ── CTA strip ─────────────────────────────────────────── */}
+        <section className="py-20" style={{ background: 'var(--bg)' }}>
+          <div className="max-w-3xl mx-auto px-6">
             <div
-              className="rounded-2xl p-8 text-center"
+              className="rounded-2xl p-10 text-center"
               style={{
                 background: 'rgba(0,66,37,0.08)',
                 border: '1px solid rgba(0,66,37,0.3)',
@@ -724,22 +743,25 @@ export default function TechnologyPage() {
             >
               <h3
                 className="font-bold mb-3"
-                style={{ fontSize: '1.5rem', color: 'var(--text)' }}
+                style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', letterSpacing: '-0.02em' }}
               >
                 Ready to integrate?
               </h3>
               <p
-                className="mb-6"
-                style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.7' }}
+                style={{ color: 'var(--text-2)', fontSize: '1rem', lineHeight: 1.7, fontWeight: 300, maxWidth: '42ch', margin: '0 auto 2rem' }}
               >
                 Talk to our partnerships team about connecting your CSMS to the
                 VideoEV middleware layer.
               </p>
               <button
                 onClick={() => openModal('partner')}
-                className="btn-primary px-6 py-3 rounded-xl font-semibold text-sm"
+                className="btn-primary"
+                style={{ fontSize: '0.9375rem', padding: '0.875rem 2rem' }}
               >
-                Request Partner Access →
+                Request Partner Access
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </div>
           </div>

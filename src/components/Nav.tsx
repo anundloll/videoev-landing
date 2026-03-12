@@ -34,7 +34,7 @@ export default function Nav() {
         </Link>
 
         {/* Desktop center links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           <Link
             href="/for-brands"
             style={{ color: 'var(--text-2)', fontSize: '0.875rem' }}
@@ -62,6 +62,13 @@ export default function Nav() {
             className="hover:text-white transition-colors"
           >
             Identity Graph
+          </Link>
+          <Link
+            href="/technology"
+            style={{ color: 'var(--text-2)', fontSize: '0.875rem' }}
+            className="hover:text-white transition-colors"
+          >
+            Technology
           </Link>
           <Link
             href="/about"
@@ -102,6 +109,7 @@ export default function Nav() {
           <Link href="/network" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>For CPOs</Link>
           <Link href="/targeting" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Data & Targeting</Link>
           <Link href="/identity" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Identity Graph</Link>
+          <Link href="/technology" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>Technology</Link>
           <Link href="/about" style={{ color: 'var(--text-2)' }} onClick={() => setOpen(false)}>About</Link>
           <div className="pt-2">
             <button
